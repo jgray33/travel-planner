@@ -19,6 +19,20 @@ type Trip {
     facts: [Fact]
     }
 
+type Plan {
+    _id: ID
+    category: String
+    name: String
+    location: [Float]
+    notes: [String]
+    status: Boolean
+}
+
+type Fact {
+    _id: ID
+    description: String
+}
+
 type Query {
     users: [User]!
     trips: [Trip]

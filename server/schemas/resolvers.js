@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Trip } = require("../models");
 
 const resolvers = {
   Query: {
