@@ -29,22 +29,22 @@ const resolvers = {
       { tripName, description, location, startDate, endDate },
       context
     ) => {
-      if (context.user) {
-        const trip = await Trip.create({
-          tripName,
-          description,
-          location,
-          startDate,
-          endDate,
-        });
+      // if (context.user) {
+      const trip = await Trip.create({
+        tripName,
+        description,
+        location,
+        startDate,
+        endDate,
+      });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { Trips: trip._id } }
-        );
+      // await User.findOneAndUpdate(
+      //   { _id: context.user._id },
+      //   { $addToSet: { Trips: trip._id } }
+      // );
 
-        return trip;
-      }
+      return trip;
+      // }
       // throw new AuthenticationError('You need to be logged in!');
     },
   },
