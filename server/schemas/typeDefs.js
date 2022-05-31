@@ -23,8 +23,8 @@ const typeDefs = gql`
     _id: ID
     category: String
     name: String
-    location: [Float]
-    notes: [String]
+    location: String
+    notes: String
     status: Boolean
   }
 
@@ -48,6 +48,14 @@ const typeDefs = gql`
       startDate: String
       endDate: String
     ): Trip
+    addPlan(
+      tripId: ID
+      category: String
+      name: String
+      location: String
+      notes: String
+      status: Boolean
+    ): Plan
   }
 `;
 

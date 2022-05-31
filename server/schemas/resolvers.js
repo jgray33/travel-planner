@@ -1,5 +1,5 @@
 // const { AuthenticationError } = require('apollo-server-express');
-const { User, Trip } = require("../models");
+const { User, Trip, Plan } = require("../models");
 // const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -47,7 +47,33 @@ const resolvers = {
       // }
       // throw new AuthenticationError('You need to be logged in!');
     },
+    // Add a new plan
+    addPlan: async (
+      parent,
+      { tripId, category, name, location, notes, status },
+      context
+    ) => {
+      // if (context.user) {
+      const plan = await Plan.create({
+        category,
+        name,
+        location,
+        notes,
+        status,
+      });
+
+      await Trip.findOneAndUpdate(
+        { _id: tripId },
+        { $addToSet: { plans: plan._id } }
+      );
+
+      return plan;
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 
 module.exports = resolvers;
+
+//

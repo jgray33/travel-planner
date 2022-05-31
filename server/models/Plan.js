@@ -4,7 +4,6 @@ const planSchema = new Schema({
   category: {
     type: String,
     required: true,
-    unique: true,
   },
   name: {
     type: String,
@@ -12,17 +11,17 @@ const planSchema = new Schema({
     trim: true,
   },
   location: {
-    type: [String],
-    required: true
+    type: String,
+    required: true,
   },
   notes: {
-    type: [String],
+    type: String,
   },
   status: {
     type: Boolean,
   },
 });
 
-const Plan = model("Plan", planSchema)
+const Plan = model("Plan", planSchema);
 
-module.exports = Plan
+module.exports = Plan;
