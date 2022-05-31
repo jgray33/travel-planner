@@ -33,10 +33,17 @@ const typeDefs = gql`
     description: String
   }
 
+  type Auth {
+      token: ID!
+      user: User
+  }
+
   type Query {
-    users: [User]!
+    users: [User]
+    user:(username: String!): User
     trips: [Trip]
     trip(tripId: ID!): Trip
+    me: User
   }
 
   type Mutation {
@@ -48,6 +55,7 @@ const typeDefs = gql`
       startDate: String
       endDate: String
     ): Trip
+    login(email: String!, password: String!): Auth
   }
 `;
 

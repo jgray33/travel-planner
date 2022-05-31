@@ -1,27 +1,46 @@
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { User, Trip } = require("../models");
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     // Find all users
     users: async () => {
-      return User.find();
+      return User.find().populate("trips")
+    },
+    user: async (parent, {username}) => {
+      return User.findOne({username}).populate("trips")
     },
     // Find all trips
     trips: async () => {
-      return Trip.find();
+      return Trip.find().populate("plans")
     },
     // Find one trip
     trip: async (parent, { tripId }) => {
-      return Trip.findOne({ _id: tripId });
+      return Trip.findOne({ _id: tripId }).populate("plans");
     },
   },
 
   Mutation: {
     //   Add a new user
     addUser: async (parent, { username, email, password }) => {
-      return User.create({ username, email, password });
+          const user = await User.create({ username, email, password });
+          const token = signToken(user)
+          return { token, user}
+    },
+    login: async (parent, { email, password}) => {
+      const user = await User.findOne({email})
+      if (!user) {
+        throw new AuthenticationError("No user with this email address")
+      }
+      const correctPw = await user.isCorrectPassword(password)
+
+      if(!correctPw) {
+        throw new AuthenticationError("Login unsuccessful")
+      }
+      const token = signToken(user)
+
+      return {token, user}
     },
     // Add a new trip
     addTrip: async (
