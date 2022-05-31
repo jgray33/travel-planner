@@ -1,14 +1,14 @@
-const { gql } = require('apollo-server-express')
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type User {
+  type User {
     _id: ID
     username: String!
     email: String!
     password: String!
     trips: [Trip]
-}
-type Trip {
+  }
+  type Trip {
     _id: ID
     tripName: String
     description: String
@@ -17,32 +17,38 @@ type Trip {
     endDate: String
     plans: [Plan]
     facts: [Fact]
-    }
+  }
 
-type Plan {
+  type Plan {
     _id: ID
     category: String
     name: String
     location: [Float]
     notes: [String]
     status: Boolean
-}
+  }
 
-type Fact {
+  type Fact {
     _id: ID
     description: String
-}
+  }
 
-type Query {
+  type Query {
     users: [User]!
     trips: [Trip]
     trip(tripId: ID!): Trip
-}
+  }
 
-type Mutation {
-    addUser(username:String!, email:String!, password: String!): User
-    addTrip(userId: ID, tripName: String, description: String, location: String, startDate: String, endDate: String): Trip
-}
-`
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): User
+    addTrip(
+      tripName: String
+      description: String
+      location: String
+      startDate: String
+      endDate: String
+    ): Trip
+  }
+`;
 
-module.exports = typeDefs
+module.exports = typeDefs;
