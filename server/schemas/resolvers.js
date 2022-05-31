@@ -24,7 +24,7 @@ const resolvers = {
     // Add a new trip
     addTrip: async (
       parent,
-      { tripName, description, location, startDate, endDate }
+      { userId, tripName, description, location, startDate, endDate }
     ) => {
       return Trip.create({ tripName, description, location, startDate, endDate });
     },

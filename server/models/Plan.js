@@ -11,10 +11,10 @@ const planSchema = new Schema({
     required: true,
     trim: true,
   },
-  location: [{
-    type: String,
+  location: {
+    type: [String],
     required: true
-  }],
+  },
   notes: {
     type: [String],
   },

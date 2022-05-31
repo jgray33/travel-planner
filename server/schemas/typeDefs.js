@@ -12,7 +12,7 @@ type Trip {
     _id: ID
     tripName: String
     description: String
-    location: [Float] 
+    location: String
     startDate: String
     endDate: String
     plans: [Plan]
@@ -40,8 +40,8 @@ type Query {
 }
 
 type Mutation {
-    addUser(userId: ID!, username:String!, email:String!, password: String!): User
-    addTrip(tripId: ID!, tripName: String, description: String, location: [Float], startDate: String, endDate: String): Trip
+    addUser(username:String!, email:String!, password: String!): User
+    addTrip(userId: ID, tripName: String, description: String, location: String, startDate: String, endDate: String): Trip
 }
 `
 
