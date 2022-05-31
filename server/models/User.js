@@ -1,4 +1,6 @@
 const { Schema, model } = require("mongoose");
+// Package used to validate email address
+const validator = require("validator");
 
 const userSchema = new Schema({
   username: {
@@ -11,16 +13,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\..+/, "Must match an email address!"],
+    validate: [validator.isEmail, "Please use a valid email address"],
   },
   password: {
     type: String,
     required: true,
     minlength: 5,
   },
+  trips: [],
 });
 
-const User = model('User', userSchema);
-
+const User = model("User", userSchema);
 
 module.exports = User;
