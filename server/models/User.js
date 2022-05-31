@@ -20,7 +20,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  trips: [],
+  trips: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Trip",
+    },
+  ],
 });
 
 const User = model("User", userSchema);

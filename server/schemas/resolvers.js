@@ -1,4 +1,6 @@
-const { User, Trip } = require("../models");
+// const { AuthenticationError } = require('apollo-server-express');
+const { User, Trip, Plan } = require("../models");
+// const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -24,11 +26,54 @@ const resolvers = {
     // Add a new trip
     addTrip: async (
       parent,
-      { userId, tripName, description, location, startDate, endDate }
+      { tripName, description, location, startDate, endDate },
+      context
     ) => {
-      return Trip.create({ tripName, description, location, startDate, endDate });
+      // if (context.user) {
+      const trip = await Trip.create({
+        tripName,
+        description,
+        location,
+        startDate,
+        endDate,
+      });
+
+      // await User.findOneAndUpdate(
+      //   { _id: context.user._id },
+      //   { $addToSet: { Trips: trip._id } }
+      // );
+
+      return trip;
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+    // Add a new plan
+    addPlan: async (
+      parent,
+      { tripId, category, name, location, notes, status },
+      context
+    ) => {
+      // if (context.user) {
+      const plan = await Plan.create({
+        category,
+        name,
+        location,
+        notes,
+        status,
+      });
+
+      await Trip.findOneAndUpdate(
+        { _id: tripId },
+        { $addToSet: { plans: plan._id } }
+      );
+
+      return plan;
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
 
 module.exports = resolvers;
+
+//
