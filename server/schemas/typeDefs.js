@@ -37,6 +37,7 @@ const typeDefs = gql`
     users: [User]!
     trips: [Trip]
     trip(tripId: ID!): Trip
+    plan(planId: ID!): Plan
   }
 
   type Mutation {
@@ -51,6 +52,13 @@ const typeDefs = gql`
     addPlan(
       tripId: ID
       category: String
+      name: String
+      location: String
+      notes: String
+      status: Boolean
+    ): Plan
+    updatePlan(
+      planId: ID
       name: String
       location: String
       notes: String
