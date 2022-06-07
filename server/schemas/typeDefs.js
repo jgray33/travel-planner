@@ -56,7 +56,7 @@ const typeDefs = gql`
       notes: String
       status: Boolean
     ): Plan
-    removePlan(tripId: ID!, planId: ID!): Trip
+    removePlan(planId: ID!, tripId: ID!): Trip
     removeTrip(tripId: ID!): Trip
   }
 `;

@@ -72,15 +72,15 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
     removePlan: async (parent, { tripId, planId }) => {
-      return Trip.findOneAndUpdate(
-        { _id: tripId},
-        {$pull: {plans: {_id: planId}}},
-        { new: true}
-      )
+      return Trip.findByIdAndUpdate(
+        { _id: tripId },
+        { $pull: { plans: { _id: planId } } },
+        { new: true }
+      );
     },
 
-   removeTrip: async (parent, { tripId }) => {
-      return Trip.findOneAndDelete({_id:tripId})
+    removeTrip: async (parent, { tripId }) => {
+      return Trip.findOneAndDelete({ _id: tripId });
     },
   },
 };
