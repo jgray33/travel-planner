@@ -57,6 +57,14 @@ const typeDefs = gql`
       notes: String
       status: Boolean
     ): Plan
+    updateTrip(
+      tripId: ID
+      tripName: String
+      description: String
+      location: String
+      startDate: String
+      endDate: String
+    ): Trip
     updatePlan(
       planId: ID
       name: String
