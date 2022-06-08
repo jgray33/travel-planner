@@ -40,14 +40,14 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    user:(username: String!): User
+    user(username: String!): User
     trips: [Trip]
     trip(tripId: ID!): Trip
     me: User
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): User
+    addUser(username: String!, email: String!, password: String!): Auth
     addTrip(
       tripName: String
       description: String
@@ -55,6 +55,7 @@ const typeDefs = gql`
       startDate: String
       endDate: String
     ): Trip
+
     login(email: String!, password: String!): Auth
     addPlan(
       tripId: ID

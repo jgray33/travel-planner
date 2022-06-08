@@ -42,6 +42,7 @@ const resolvers = {
 
       return {token, user}
     },
+    
     // Add a new trip
     addTrip: async (
       parent,
