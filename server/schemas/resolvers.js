@@ -72,9 +72,9 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
     removePlan: async (parent, { tripId, planId }) => {
-      return Trip.findByIdAndUpdate(
+      return await Trip.findOneAndUpdate(
         { _id: tripId },
-        { $pull: { plans: { _id: planId } } },
+        { $pull: { plans: { $eq: planId } } },
         { new: true }
       );
     },
