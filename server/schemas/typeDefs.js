@@ -57,6 +57,8 @@ const typeDefs = gql`
       notes: String
       status: Boolean
     ): Plan
+    removePlan(planId: ID!, tripId: ID!): Trip
+    removeTrip(tripId: ID!): Trip
     updateTrip(
       tripId: ID
       tripName: String
