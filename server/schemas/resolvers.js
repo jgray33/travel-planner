@@ -8,8 +8,16 @@ const resolvers = {
     users: async () => {
       return User.find().populate("trips")
     },
+    // Find a user
     user: async (parent, {username}) => {
       return User.findOne({username}).populate("trips")
+    },
+    // Find me
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({_id: context.user._id})
+      }
+      throw new AuthenticationError("You need to be logged in")
     },
     // Find all trips
     trips: async () => {
@@ -28,6 +36,7 @@ const resolvers = {
           const token = signToken(user)
           return { token, user}
     },
+    // Login
     login: async (parent, { email, password}) => {
       const user = await User.findOne({email})
       if (!user) {
@@ -42,8 +51,7 @@ const resolvers = {
 
       return {token, user}
     },
-    
-    // Add a new trip
+        // Add a new trip
     addTrip: async (
       parent,
       { tripName, description, location, startDate, endDate },
