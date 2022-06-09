@@ -37,6 +37,7 @@ const typeDefs = gql`
     users: [User]!
     trips: [Trip]
     trip(tripId: ID!): Trip
+    plan(planId: ID!): Plan
   }
 
   type Mutation {
@@ -58,6 +59,21 @@ const typeDefs = gql`
     ): Plan
     removePlan(planId: ID!, tripId: ID!): Trip
     removeTrip(tripId: ID!): Trip
+    updateTrip(
+      tripId: ID
+      tripName: String
+      description: String
+      location: String
+      startDate: String
+      endDate: String
+    ): Trip
+    updatePlan(
+      planId: ID
+      name: String
+      location: String
+      notes: String
+      status: Boolean
+    ): Plan
   }
 `;
 

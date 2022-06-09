@@ -16,6 +16,10 @@ const resolvers = {
     trip: async (parent, { tripId }) => {
       return Trip.findOne({ _id: tripId });
     },
+    // Find one plan
+    plan: async (parent, { planId }) => {
+      return Plan.findOne({ _id: planId });
+    },
   },
 
   Mutation: {
@@ -71,6 +75,7 @@ const resolvers = {
       // }
       // throw new AuthenticationError('You need to be logged in!');
     },
+
     removePlan: async (parent, { tripId, planId }) => {
       return await Trip.findOneAndUpdate(
         { _id: tripId },
@@ -81,10 +86,46 @@ const resolvers = {
 
     removeTrip: async (parent, { tripId }) => {
       return Trip.findOneAndDelete({ _id: tripId });
+
+    // Update an existing Trip
+    updateTrip: async (
+      parent,
+      { tripId, tripName, description, location, startDate, endDate }
+    ) => {
+      // Find and update the matching trip using the destructured args
+      return await Trip.findOneAndUpdate(
+        { _id: tripId },
+        {
+          $set: {
+            tripName,
+            description,
+            location,
+            startDate,
+            endDate,
+          },
+        },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+    },
+    // Update an existing plan
+    updatePlan: async (parent, { planId, name, location, notes, status }) => {
+      // Find and update the matching plan using the destructured args
+      return await Plan.findOneAndUpdate(
+        { _id: planId },
+        {
+          $set: {
+            name,
+            location,
+            notes,
+            status,
+          },
+        },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
     },
   },
 };
 
 module.exports = resolvers;
-
-//
