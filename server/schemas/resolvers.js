@@ -1,9 +1,17 @@
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
+const { sign } = require('jsonwebtoken');
 const { User, Trip, Plan, Fact } = require("../models");
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    // This is to confirm the user
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     // Find all users
     users: async () => {
       return User.find();
@@ -28,7 +36,23 @@ const resolvers = {
   Mutation: {
     //   Add a new user
     addUser: async (parent, { username, email, password }) => {
-      return User.create({ username, email, password });
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return{token,user}
+    },
+    login: async (parent,{email,password})=> {
+      const user = await User.findOne({ email})
+      if(!user) {
+        throw new AuthenticationError("Your username or Password is incorrect")
+      }
+      const validate = await user.isCorrectPassword(password)
+      if(!validate) {
+        throw new AuthenticationError("Your username or Password is incorrect")
+
+      }
+      const token = signToken(user);
+      return{token,user}
+
     },
     // Add a new trip
     addTrip: async (
