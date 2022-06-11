@@ -33,16 +33,24 @@ const typeDefs = gql`
     description: String
   }
 
+  type Auth {
+      token: ID!
+      user: User
+  }
+
   type Query {
-    users: [User]!
+    users: [User]
+    user(username: String!): User
     trips: [Trip]
     trip(tripId: ID!): Trip
+    me: User
     plan(planId: ID!): Plan
     facts: [Fact]
+
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): User
+    addUser(username: String!, email: String!, password: String!): Auth
     addTrip(
       tripName: String
       description: String
@@ -50,6 +58,8 @@ const typeDefs = gql`
       startDate: String
       endDate: String
     ): Trip
+
+    login(email: String!, password: String!): Auth
     addPlan(
       tripId: ID
       category: String

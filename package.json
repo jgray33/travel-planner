@@ -22,7 +22,12 @@
   },
   "homepage": "https://github.com/jgray33/travel-planner#readme",
   "dependencies": {
+    "apollo-client": "^2.6.10",
+    "bcrypt": "^5.0.1",
     "concurrently": "^7.2.1",
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "nodemon": "^2.0.16"
   }
 }
