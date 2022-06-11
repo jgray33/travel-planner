@@ -9,22 +9,22 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
+import Home from './pages/Home'
+import Trip from "./pages/TripPage";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
-// const authLink = setContext((_, { headers }) => {
-//   // get the authentication token from local storage if it exists
-//   const token = localStorage.getItem("id_token");
-//   // return the headers to the context so httpLink can read them
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : "",
-//     },
-//   };
-// });
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
 
 const client = new ApolloClient({
   link: httpLink,
@@ -35,14 +35,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <div className="container">
-            <Routes>
+        <div>
+          <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/trip" element={<Trip />} />
+            <Route path="/" element={<Home />} />
             </Routes>
           </div>
-        </div>
-      </Router>
+        </Router>
     </ApolloProvider>
   );
 }

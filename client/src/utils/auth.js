@@ -1,28 +1,41 @@
-// import decode from "jsonwebtoken/decode";
+import jwt_decode from "jwt-decode";
+ 
 
-// class AuthService {
-//     getUser() {
-//         return decode(this.getToken())
-//     }
+class AuthService {
+    getUser() {
+        return jwt_decode(this.getToken())
+    }
 
-// loggedIn() {
-//     const token = this.getToken()
-//     return token ? true: false
-// }
+loggedIn() {
+    const token = this.getToken()
+    return token ? true: false
+}
 
-// getToken() {
-//     return localStorage.getItem('id_token')
-// }
+isTokenExpired(token) {
+    // Decode the token to get its expiration time that was set by the server
+    const decoded = jwt_decode(token);
+    // If the expiration time is less than the current time (in seconds), the token is expired and we return `true`
+    if (decoded.exp < Date.now() / 1000) {
+      localStorage.removeItem('id_token');
+      return true;
+    }
+    // If token hasn't passed its expiration time, return `false`
+    return false;
+  }
 
-// login(idToken) {
-//     localStorage.setItem('id_token', idToken);
-//     window.location.assign('/')
-// }
+getToken() {
+    return localStorage.getItem('id_token')
+}
 
-// logout() {
-//     localStorage.removeItem('id_token')
-//     window.location.reload()
-// }
-// }
+login(idToken) {
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/')
+}
 
-// export default new AuthService()
+logout() {
+    localStorage.removeItem('id_token')
+    window.location.reload()
+}
+}
+
+export default new AuthService()
