@@ -1,29 +1,27 @@
-
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require("apollo-server-express");
 const { User, Trip, Plan, Fact } = require("../models");
-// const { signToken } = require('../utils/auth');
-
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     // Find all users
     users: async () => {
-      return User.find().populate("trips")
+      return User.find().populate("trips");
     },
     // Find a user
-    user: async (parent, {username}) => {
-      return User.findOne({username}).populate("trips")
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate("trips");
     },
     // Find me
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({_id: context.user._id})
+        return User.findOne({ _id: context.user._id });
       }
-      throw new AuthenticationError("You need to be logged in")
+      throw new AuthenticationError("You need to be logged in");
     },
     // Find all trips
     trips: async () => {
-      return Trip.find().populate("plans")
+      return Trip.find().populate("plans");
     },
     facts: async () => {
       return Fact.find();
@@ -41,26 +39,26 @@ const resolvers = {
   Mutation: {
     //   Add a new user
     addUser: async (parent, { username, email, password }) => {
-          const user = await User.create({ username, email, password });
-          const token = signToken(user)
-          return { token, user}
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return { token, user };
     },
     // Login
-    login: async (parent, { email, password}) => {
-      const user = await User.findOne({email})
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError("No user with this email address")
+        throw new AuthenticationError("No user with this email address");
       }
-      const correctPw = await user.isCorrectPassword(password)
+      const correctPw = await user.isCorrectPassword(password);
 
-      if(!correctPw) {
-        throw new AuthenticationError("Login unsuccessful")
+      if (!correctPw) {
+        throw new AuthenticationError("Login unsuccessful");
       }
-      const token = signToken(user)
+      const token = signToken(user);
 
-      return {token, user}
+      return { token, user };
     },
-        // Add a new trip
+    // Add a new trip
     addTrip: async (
       parent,
       { tripName, description, location, startDate, endDate },

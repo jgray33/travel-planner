@@ -1,0 +1,25 @@
+[
+    {
+        "category": "eat",
+        "name": "Dishoom",
+        "location": "Birmingham, UK",
+        "notes": "",
+        "status": false
+    },
+    {
+        "category": "visit",
+        "name": "Ruin Bars",
+        "location": "Budapest",
+        "notes": "These are some notes",
+        "status": true
+    },
+    {
+        "category": "activity",
+        "name": "Open top bus ride",
+        "location": "London, UK",
+        "notes": "",
+        "status": false
+    }
+]
+
+
