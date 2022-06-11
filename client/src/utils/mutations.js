@@ -23,3 +23,11 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_TRIP = gql`
+mutation Mutation($tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
+    addTrip(tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate) {
+      tripName
+      description
+    }
+  }`

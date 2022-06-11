@@ -1,4 +1,3 @@
-import { assertValidSchema } from "graphql";
 import React from "react";
 
 import Auth from "../utils/auth";
@@ -8,7 +7,7 @@ const Welcome = () => {
     event.preventDefault();
     Auth.logout();
   };
-  console.log(Auth.getUser().data.username);
+  
 
   return (
     <div>

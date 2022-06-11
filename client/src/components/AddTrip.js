@@ -33,7 +33,7 @@ const AddTrip = () => {
   }
 
   return (
-    <div id="julia">
+    <div>
       <button type="button" onClick={openModal}>
         Add trip
       </button>
@@ -45,9 +45,7 @@ const AddTrip = () => {
         contentLabel="Add Trip"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
-        <form>
-          <AddTripForm />
-        </form>
+        <AddTripForm />
         <button onClick={closeModal}>close</button>
       </Modal>
     </div>

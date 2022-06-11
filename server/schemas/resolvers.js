@@ -57,33 +57,34 @@ const resolvers = {
         throw new AuthenticationError("Login unsuccessful")
       }
       const token = signToken(user)
-
       return {token, user}
     },
         // Add a new trip
     addTrip: async (
       parent,
-      { tripName, description, location, startDate, endDate },
+      { userID, tripName, description, location, startDate, endDate },
       context
     ) => {
       // if (context.user) {
       const trip = await Trip.create({
+        userID,
         tripName,
         description,
         location,
         startDate,
         endDate,
       });
-
-      // await User.findOneAndUpdate(
-      //   { _id: context.user._id },
-      //   { $addToSet: { Trips: trip._id } }
-      // );
+      await User.findOneAndUpdate(
+        { _id: userID },
+        { $addToSet: { Trips: trip._id } }
+      );
 
       return trip;
-      // }
+      
       // throw new AuthenticationError('You need to be logged in!');
     },
+
+
     // Add a new plan
     addPlan: async (
       parent,
