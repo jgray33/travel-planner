@@ -12,18 +12,18 @@ const Trip = () => {
 
 
     return (
-        <div class="container">
-        <div class="row row-eq-height">
-          <div class="col" style={styles.column}>
+        <div className="container">
+        <div className="row row-eq-height">
+          <div className="col" style={styles.column}>
             <Eat/>
           </div>
-          <div class="col">
+          <div className="col">
             Column
           </div>         
-          <div class="col">
+          <div className="col">
             Column
           </div>
-          <div class="col">
+          <div className="col">
             Column
           </div>
         </div>
