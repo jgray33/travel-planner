@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_TRIP } from "../utils/mutations";
 
 import Auth from '../utils/auth'
-const userID = Auth.getUser().data._id
+const userId = Auth.getUser().data._id
 
 const AddTripForm = () => {
   const [formState, setFormState] = useState({
@@ -12,9 +12,9 @@ const AddTripForm = () => {
     location: "",
     startDate: "",
     endDate: "",
-    userID: userID
+    userId: userId
   });
-console.log(userID)
+console.log(userId)
   const [addTrip, { error }] = useMutation(ADD_TRIP);
 
   const handleChange = (event) => {
