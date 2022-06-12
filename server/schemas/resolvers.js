@@ -62,12 +62,11 @@ const resolvers = {
         // Add a new trip
     addTrip: async (
       parent,
-      { userID, tripName, description, location, startDate, endDate },
-      context
+      { userId, tripName, description, location, startDate, endDate }
     ) => {
       // if (context.user) {
       const trip = await Trip.create({
-        userID,
+        userId,
         tripName,
         description,
         location,
@@ -75,7 +74,7 @@ const resolvers = {
         endDate,
       });
       await User.findOneAndUpdate(
-        { _id: userID },
+        { _id: userId },
         { $addToSet: { Trips: trip._id } }
       );
 
