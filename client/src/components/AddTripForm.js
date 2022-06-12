@@ -34,7 +34,7 @@ console.log(userID)
       const { data } = addTrip({
           variables: { ...formState },
       });
-          //   window.location.reload();
+            // window.location.reload();
     } catch (err) {
       console.log(err);
     }

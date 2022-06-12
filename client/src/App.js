@@ -40,10 +40,11 @@ function App() {
       <Router>
         <div className="">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/trip" element={<Trip />} />
-            <Route path="/tripdash" element={<UserDashboard />} />
+            <Route path="/trips/:tripId" element={<Trip />} />
+            <Route path="/users/:username" element={<UserDashboard />} />
             </Routes>
           </div>
         </Router>
