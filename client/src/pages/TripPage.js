@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import AddVisit from '../components/AddVisit'
 import PlanCard from "../components/PlanCard";
 import FactCard from "../components/FactCard";
 import { useQuery } from "@apollo/client";
@@ -38,6 +39,7 @@ const Trip = () => {
         </div>
         <div className="col-md-3">
           <h6>Visit</h6>
+          <AddVisit/>
           <PlanCard plans={visitPlans} />
         </div>
         <div className="col-md-3">
