@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import Trip from "./pages/TripPage";
 import Signup from "./pages/Signup";
 import UserDashboard from "./pages/TripDashboard";
+import NavBar from "./components/NavBar"
 
 
 const httpLink = createHttpLink({
@@ -39,6 +40,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="">
+          <NavBar/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
