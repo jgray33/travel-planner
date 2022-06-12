@@ -1,5 +1,6 @@
 import React from 'react'
 import Eat from '../components/Eat'
+import AddVisit from '../components/AddVisit'
 
 const Trip = () => {
 
@@ -21,7 +22,7 @@ const Trip = () => {
             Column
           </div>         
           <div className="col">
-            Column
+            <AddVisit/>
           </div>
           <div className="col">
             Column

@@ -6,8 +6,6 @@ import UserTripCards from '../components/UserTripCards'
 import { useParams } from "react-router-dom";
 import { QUERY_USER } from "../utils/queries";
 
-
-
 const UserDashboard = () => {
 
   const { username} = useParams()

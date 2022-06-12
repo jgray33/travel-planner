@@ -30,3 +30,11 @@ mutation AddTrip($userId: ID, $tripName: String, $description: String, $location
     tripName
   }
 }`
+
+export const ADD_PLAN = gql`
+mutation AddPlan($tripId: ID, $category: String, $name: String, $location: String, $notes: String, $status: Boolean) {
+  addPlan(tripId: $tripId, category: $category, name: $name, location: $location, notes: $notes, status: $status) {
+    category
+  }
+}
+`
