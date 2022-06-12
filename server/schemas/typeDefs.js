@@ -52,6 +52,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addTrip(
+      userId: ID
       tripName: String
       description: String
       location: String
