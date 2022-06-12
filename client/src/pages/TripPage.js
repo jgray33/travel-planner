@@ -1,36 +1,56 @@
-import React from 'react'
-import Eat from '../components/Eat'
+import React from "react";
+import PlanCard from "../components/PlanCard";
+import FactCard from "../components/FactCard";
+import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
+import { QUERY_TRIP } from "../utils/queries";
 
 const Trip = () => {
+  const { tripId } = useParams();
 
-    const styles = {
-        column: {
-            border: "solid 3px black",
-            height: "100px"
-        }
-    }
+  const { loading, data } = useQuery(QUERY_TRIP, {
+    variables: { tripId: tripId },
+  });
 
+  const plans = data?.trip.plans || {};
+  const facts = data?.trip.facts || {};
 
-    return (
-        <div className="container">
-        <div className="row row-eq-height">
-          <div className="col" style={styles.column}>
-            <Eat/>
-          </div>
-          <div className="col">
-            Column
-          </div>         
-          <div className="col">
-            Column
-          </div>
-          <div className="col">
-            Column
-          </div>
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const eatPlans = plans.filter(
+    (plan) => plan.category.toLowerCase() === "eat"
+  );
+  const visitPlans = plans.filter(
+    (plan) => plan.category.toLowerCase() === "visit"
+  );
+  const activityPlans = plans.filter(
+    (plan) => plan.category.toLowerCase() === "activity"
+  );
+
+  return (
+    <div className="container">
+      <div className="row row-eq-height">
+        <div className="col-md-3">
+          <h6>Eat</h6>
+          <PlanCard plans={eatPlans} />
+        </div>
+        <div className="col-md-3">
+          <h6>Visit</h6>
+          <PlanCard plans={visitPlans} />
+        </div>
+        <div className="col-md-3">
+          <h6>Activity</h6>
+          <PlanCard plans={activityPlans} />
+        </div>
+        <div className="col-md-3">
+          <h6>Facts</h6>
+          <FactCard facts={facts} />
         </div>
       </div>
-    )
+    </div>
+  );
+};
 
-    
-}
-
-export default Trip
+export default Trip;
