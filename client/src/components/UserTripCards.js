@@ -1,6 +1,6 @@
-import { useQuery } from "@apollo/client";
 import React from "react";
-import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom"
+
 
 const styles= {
   card: {
@@ -21,11 +21,13 @@ console.log(trips)
     {trips.map((trip) => (
       <div className="card" styles={styles.card}>
   <div className="card-body">
+  <Link
+                  className="btn btn-block btn-squared btn-light text-dark"
+                  to={`/trips/${trip._id}`}
+                >
     <h5 className="card-title">{trip.tripName}</h5>
+    </Link>
     <h6 className="card-subtitle mb-2 text-muted">{trip.description}</h6>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
   </div>
   </div>
     ))}

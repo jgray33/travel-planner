@@ -6,6 +6,7 @@ query User($username: String!) {
     _id
     username
     trips {
+      _id
       tripName
       description
       location
