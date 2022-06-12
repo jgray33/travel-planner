@@ -1,8 +1,6 @@
-
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Trip, Plan, Fact } = require("../models");
 const { signToken } = require("../utils/auth");
-
 
 const resolvers = {
   Query: {
@@ -30,11 +28,15 @@ const resolvers = {
     },
     // Find one trip
     trip: async (parent, { tripId }) => {
-      return Trip.findOne({ _id: tripId }).populate("plans");
+      return Trip.findOne({ _id: tripId }).populate("plans").populate("facts");
     },
     // Find one plan
     plan: async (parent, { planId }) => {
       return Plan.findOne({ _id: planId });
+    },
+    // Find one fact
+    fact: async (parent, { factId }) => {
+      return Fact.findOne({ _id: factId });
     },
   },
 
@@ -57,14 +59,14 @@ const resolvers = {
         throw new AuthenticationError("Login unsuccessful");
       }
 
-      const token = signToken(user)
-      return {token, user}
-
+      const token = signToken(user);
+      return { token, user };
     },
     // Add a new trip
     addTrip: async (
       parent,
-      { userId, tripName, description, location, startDate, endDate }, context
+      { userId, tripName, description, location, startDate, endDate },
+      context
     ) => {
       // if (context.user) {
       const trip = await Trip.create({
@@ -80,10 +82,9 @@ const resolvers = {
       );
 
       return trip;
-      
+
       // throw new AuthenticationError('You need to be logged in!');
     },
-
 
     // Add a new plan
     addPlan: async (
