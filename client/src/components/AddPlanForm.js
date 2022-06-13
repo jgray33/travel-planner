@@ -2,21 +2,39 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_PLAN } from "../utils/mutations";
 import { useParams } from "react-router-dom";
+import EditPlanButton from "./EditPlanButton";
+import AddPlanButton from "./AddPlanButton";
 
-export default function AddPlanForm({planId, category, name, location, notes, status}) {
+export default function AddPlanForm({
+  planId,
+  category,
+  name,
+  location,
+  notes,
+  status,
+}) {
   const { tripId } = useParams();
   console.log(tripId);
-  
-
 
   const [formState, setFormState] = useState({
     tripId: tripId,
-    category: category? category: "",
-    name: name? name: "",
-    location: location? location: "",
-    notes: notes? notes: "",
-    status: status? status: false,
+    category: category ? category : "",
+    name: name ? name : "",
+    location: location ? location : "",
+    notes: notes ? notes : "",
+    status: status ? status : false,
   });
+
+let button
+if(planId) {
+  button = <EditPlanButton />; 
+console.log(planId)}
+    else {
+      button = <AddPlanButton/>
+      console.log("Add plan")
+    }
+  
+
 
   const [addPlan, { error }] = useMutation(ADD_PLAN);
 
@@ -39,6 +57,8 @@ export default function AddPlanForm({planId, category, name, location, notes, st
     } catch (err) {
       console.log(err);
     }
+
+
   };
 
   return (
@@ -85,12 +105,7 @@ export default function AddPlanForm({planId, category, name, location, notes, st
           ></textarea>
         </div>
         <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="edit">
-            Update
-          </button>
-          <button className="btn btn-primary btn-block py-3" type="submit">
-            Add Plan
-          </button>
+          {button}
         </div>
         {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
@@ -98,6 +113,6 @@ export default function AddPlanForm({planId, category, name, location, notes, st
           </div>
         )}
       </form>
-    </div>
+      </div>
   );
 }
