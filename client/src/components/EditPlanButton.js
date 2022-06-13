@@ -2,7 +2,9 @@ import React from 'react'
 
 const EditPlanButton = () => {
     return(
-    <button> Edit</button>
+        <button className="btn btn-primary btn-block py-3" type="submit">
+        Update
+      </button>
     )
 }
 
