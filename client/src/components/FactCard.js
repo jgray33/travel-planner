@@ -6,7 +6,7 @@ const FactCard = ({ facts }) => {
   return (
     <div>
       {facts.map((fact) => (
-        <div className="card my-3">
+        <div className="card my-3" key={fact._id}>
           <div className="card-body">
             <p className="card-title">{fact.description}</p>
           </div>

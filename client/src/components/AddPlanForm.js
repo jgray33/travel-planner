@@ -26,7 +26,7 @@ export default function AddPlanForm({
   // Conditionally render the button depending if editing or adding a new plan
 let button
 if(planId) {
-  button = <EditPlanButton formState={formState} />; 
+  button = <EditPlanButton formState={formState} planId={planId} />; 
 console.log(planId)}
     else {
       button = <AddPlanButton formState={formState}/>
