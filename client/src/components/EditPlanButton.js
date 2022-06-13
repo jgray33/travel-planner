@@ -4,8 +4,7 @@ import { UPDATE_PLAN } from "../utils/mutations";
 
 const EditPlanButton = ({ formState, planId }) => {
   const [editPlan, { error }] = useMutation(UPDATE_PLAN);
-console.log("plan ID: " + planId)
-console.log(formState)
+
 
   const handleFormSubmit = async (event) => {
     try {

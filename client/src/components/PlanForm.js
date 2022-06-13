@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import EditPlanButton from "./EditPlanButton";
 import AddPlanButton from "./AddPlanButton";
 
-export default function AddPlanForm({
+export default function PlanForm({
   planId,
   category,
   name,

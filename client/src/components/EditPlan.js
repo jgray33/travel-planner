@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal"
-import AddPlanForm from "../components/AddPlanForm"
+import PlanForm from "./PlanForm"
 
 
 Modal.setAppElement("#root")
@@ -32,7 +32,7 @@ const EditPlan = ( {planId, category, name, location, notes, status} ) => {
         onRequestClose={closeModal}
         contentLabel="Edit plan"
       >
-        <AddPlanForm planId={planId} 
+        <PlanForm planId={planId} 
             category={category}
             name={name} 
             location={location}
