@@ -3,17 +3,19 @@ import { useMutation } from "@apollo/client";
 import { ADD_PLAN } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 
-export default function AddPlanForm() {
+export default function AddPlanForm({planId, category, name, location, notes, status}) {
   const { tripId } = useParams();
   console.log(tripId);
+  
+
 
   const [formState, setFormState] = useState({
     tripId: tripId,
-    category: "",
-    name: "",
-    location: "",
-    notes: "",
-    status: false,
+    category: category? category: "",
+    name: name? name: "",
+    location: location? location: "",
+    notes: notes? notes: "",
+    status: status? status: false,
   });
 
   const [addPlan, { error }] = useMutation(ADD_PLAN);
@@ -82,7 +84,10 @@ export default function AddPlanForm() {
             onChange={handleChange}
           ></textarea>
         </div>
-              <div className="col-12 col-lg-3">
+        <div className="col-12 col-lg-3">
+          <button className="btn btn-primary btn-block py-3" type="edit">
+            Update
+          </button>
           <button className="btn btn-primary btn-block py-3" type="submit">
             Add Plan
           </button>
