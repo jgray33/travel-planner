@@ -38,3 +38,10 @@ mutation AddPlan($tripId: ID, $category: String, $name: String, $location: Strin
   }
 }
 `
+
+export const ADD_FACT = gql`
+mutation AddFact($tripId: ID, $description: String) {
+  addFact(tripId: $tripId, description: $description) {
+    _id
+  }
+}`
