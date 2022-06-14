@@ -17,7 +17,7 @@ const UserTripCards = ({ trips }) => {
         <div className="card" styles={styles.card}>
           <div className="card-body">
             <Link
-              className="btn btn-block btn-squared btn-light text-dark"
+              className="btn btn-primary btn-block btn-squared btn-light text-dark"
               to={`/trips/${trip._id}`}
             >
               <h5 className="card-title">{trip.tripName}</h5>

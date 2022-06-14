@@ -45,7 +45,7 @@ const AddTripForm = () => {
       <h1>Here is the form</h1>
 
       <form
-        className="flex-row justify-center justify-space-between-md align-center"
+        className="container-fluid flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
         <div className="col-12">
@@ -95,7 +95,7 @@ const AddTripForm = () => {
         </div>
 
         <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="submit">
+          <button className="btn btn-primary text-nowrap" type="submit">
             Add trip
           </button>
         </div>
