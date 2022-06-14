@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TRIP } from "../utils/mutations";
 
-import Auth from '../utils/auth'
-const userId = Auth.getUser().data._id
+import Auth from "../utils/auth";
+const userId = Auth.getUser()?.data?._id;
 
 const AddTripForm = () => {
   const [formState, setFormState] = useState({
@@ -12,19 +12,19 @@ const AddTripForm = () => {
     location: "",
     startDate: "",
     endDate: "",
-    userId: userId
+    userId: userId,
   });
-console.log(userId)
+  console.log(userId);
   const [addTrip, { error }] = useMutation(ADD_TRIP);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => {
-        return {
-            ...prevState,
-            [name]: value
-        }
-    })
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
   };
 
   const handleFormSubmit = async (event) => {
@@ -32,9 +32,9 @@ console.log(userId)
 
     try {
       const { data } = addTrip({
-          variables: { ...formState },
+        variables: { ...formState },
       });
-            // window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.log(err);
     }
