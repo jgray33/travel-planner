@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import AddPlanForm from "../components/AddPlanForm"
+import PlanForm from "./PlanForm"
 
 Modal.setAppElement("#root");
 
@@ -33,7 +33,7 @@ const AddVisit = () => {
         onRequestClose={closeModal}
         contentLabel="Add visit"
       >
-        <AddPlanForm />
+        <PlanForm />
         <button onClick={closeModal}>close</button>
       </Modal>
     </div>

@@ -2,8 +2,16 @@ import jwt_decode from "jwt-decode";
 
 class AuthService {
   getUser() {
-    return jwt_decode(this.getToken());
+    try {
+      return jwt_decode(this.getToken());
+    } catch (ex) {
+      return null;
+    }
   }
+  // class AuthService {
+  //   getUser() {
+  //     return jwt_decode(this.getToken());
+  //   }
 
   loggedIn() {
     const token = this.getToken();

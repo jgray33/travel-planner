@@ -7,21 +7,17 @@ const Welcome = () => {
     event.preventDefault();
     Auth.logout();
   };
-  
 
   return (
     <div>
       {Auth.loggedIn() ? (
         <h1>
-          Hello
+          Hello <br></br>
           {Auth.getUser().data.username} you are logged in
         </h1>
       ) : (
         <h1>Not logged in</h1>
       )}
-
-
-      
     </div>
   );
 };

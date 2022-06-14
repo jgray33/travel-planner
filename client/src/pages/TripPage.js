@@ -5,6 +5,7 @@ import FactCard from "../components/FactCard";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_TRIP } from "../utils/queries";
+import AddFact from '../components/AddFact';
 
 const Trip = () => {
   const { tripId } = useParams();
@@ -48,6 +49,7 @@ const Trip = () => {
         </div>
         <div className="col-md-3">
           <h6>Facts</h6>
+          <AddFact/>
           <FactCard facts={facts} />
         </div>
       </div>
