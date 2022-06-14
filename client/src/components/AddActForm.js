@@ -7,24 +7,23 @@ export default function AddFactForm() {
   const { tripId } = useParams();
   console.log(tripId);
 
-  const [fact, setFact] = useState("")
+  const [fact, setFact] = useState("");
 
-  const [addFact, {error}] = useMutation(ADD_FACT)
+  const [addFact, { error }] = useMutation(ADD_FACT);
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     try {
       const data = addFact({
-        variables: { tripId, fact}
-      })
+        variables: { tripId, fact },
+      });
 
-      setFact("")
+      setFact("");
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
-
+  };
 
   return (
     <div>
@@ -35,7 +34,7 @@ export default function AddFactForm() {
       >
         <div className="col-12">
           <textarea
-            name="category"
+            name="description"
             placeholder="Fact?"
             value={fact}
             className="form-input w-100"

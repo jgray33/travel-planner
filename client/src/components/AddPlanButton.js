@@ -4,8 +4,7 @@ import { ADD_PLAN } from "../utils/mutations";
 
 const AddPlanButton = ({ formState }) => {
   const [addPlan, { error }] = useMutation(ADD_PLAN);
-  console.log(formState)
-  
+  console.log(formState);
 
   const handleFormSubmit = async (event) => {
     //   event.preventDefault();
@@ -15,14 +14,13 @@ const AddPlanButton = ({ formState }) => {
       });
     } catch (err) {
       console.log(err);
-      
     }
   };
 
   return (
-    <div>
+    <div className="d-grid">
       <button
-        className="btn btn-primary btn-block py-3"
+        className="btn btn-outline-secondary py-3"
         onClick={handleFormSubmit}
       >
         Add plan

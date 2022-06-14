@@ -5,7 +5,6 @@ import { UPDATE_PLAN } from "../utils/mutations";
 const EditPlanButton = ({ formState, planId }) => {
   const [editPlan, { error }] = useMutation(UPDATE_PLAN);
 
-
   const handleFormSubmit = async (event) => {
     try {
       const { data } = editPlan({
@@ -15,7 +14,7 @@ const EditPlanButton = ({ formState, planId }) => {
           name: formState.name,
           location: formState.location,
           notes: formState.notes,
-          status: formState.status
+          status: formState.status,
         },
       });
     } catch (err) {
@@ -25,7 +24,7 @@ const EditPlanButton = ({ formState, planId }) => {
 
   return (
     <button
-      className="btn btn-primary btn-block py-3"
+      className="btn btn-outline-secondary btn-block py-3"
       onClick={handleFormSubmit}
     >
       Update
