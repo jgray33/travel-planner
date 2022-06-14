@@ -45,3 +45,10 @@ mutation UpdatePlan($planId: ID, $name: String, $location: String, $notes: Strin
     name
   }
 }`
+
+export const ADD_FACT = gql`
+mutation AddFact($tripId: ID, $description: String) {
+  addFact(tripId: $tripId, description: $description) {
+    _id
+  }
+}`
