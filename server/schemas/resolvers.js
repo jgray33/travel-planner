@@ -172,12 +172,13 @@ const resolvers = {
       );
     },
     // Update an existing plan
-    updatePlan: async (parent, { planId, name, location, notes, status }) => {
+    updatePlan: async (parent, { planId, category, name, location, notes, status }) => {
       // Find and update the matching plan using the destructured args
       return await Plan.findOneAndUpdate(
         { _id: planId },
         {
           $set: {
+            category,
             name,
             location,
             notes,

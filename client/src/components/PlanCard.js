@@ -1,4 +1,5 @@
 import React from "react";
+import EditPlan from "./EditPlan";
 
 const PlanCard = ({ plans }) => {
   // plans.map((plan) => console.log(plan.name));
@@ -6,7 +7,10 @@ const PlanCard = ({ plans }) => {
   return (
     <div>
       {plans.map((plan) => (
-        <div className={`card my-3 ${plan.status ? "border-success" : ""}`}>
+        <div
+          className={`card my-3 ${plan.status ? "border-success" : ""}`}
+          key={plan._id}
+        >
           <div className="card-body">
             <h5 className="card-title">{plan.name}</h5>
             <ul className="list-group list-group-flush">
@@ -14,7 +18,15 @@ const PlanCard = ({ plans }) => {
               <li className="list-group-item">{plan.notes}</li>
             </ul>
           </div>
-          <div className="card-footer">Footer</div>
+          <div className="card-footer">
+            <EditPlan planId={plan._id} 
+            category={plan.category}
+            name={plan.name} 
+            location={plan.location}
+            notes={plan.notes}
+            status={plan.status}
+            />{" "}
+          </div>
         </div>
       ))}
     </div>
