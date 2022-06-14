@@ -47,7 +47,7 @@ const AddTrip = () => {
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
         <AddTripForm />
         <button
-          className="btn btn-secondary btn-sm btn-border-width:10px"
+          className="btn btn-secondary container-fluid "
           onClick={closeModal}
         >
           close

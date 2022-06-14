@@ -11,12 +11,9 @@ const Home = () => {
   return (
     <div>
       <h2> Home Page</h2>
-      <Link
-        className="btn btn-block btn-squared btn-light text-dark"
-        to={`/users/${userId}`}
-      >
+      <Link className="btn" to={`/users/${userId}`}>
         {" "}
-        <button>Go to your dashboard</button>
+        <button className="btn btn-primary">Go to your dashboard</button>
       </Link>
     </div>
   );
