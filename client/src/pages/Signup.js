@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
+import "../style/signup-login.css";
+
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -46,7 +48,7 @@ const Signup = () => {
         </p>
       ) : (
         <form onSubmit={handleFormSubmit}>
-          <h2 className="h3 mb-3 fw-normal">Please sign in</h2>
+          <h2 className="h3 mb-3 fw-normal">Please sign up</h2>
 
           <div className="form-floating">
             <input

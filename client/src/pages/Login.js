@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
+import "../style/signup-login.css";
+
 import Auth from "../utils/auth";
 
 const Login = (props) => {
@@ -74,12 +76,12 @@ const Login = (props) => {
               />
               <label htmlFor="password">Password</label>
             </div>
-            <button
-              className="w-100 btn btn-lg btn-outline-secondary"
-              type="submit"
-            >
+            <button className="w-100 btn btn-lg btn-outline-dark" type="submit">
               Submit
             </button>
+            <div className="text-center mt-3">
+              <Link to="/signup">Create an account</Link>
+            </div>
           </form>
         )}
 

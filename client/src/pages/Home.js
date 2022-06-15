@@ -1,23 +1,32 @@
 import React, { userState } from "react";
 import { Link } from "react-router-dom";
-// import { useMutation } from '@apollo/client'
 
 import Auth from "../utils/auth";
 
 const Home = () => {
   const userId = Auth.getUser()?.data?.username;
-  console.log(userId);
 
   return (
-    <div>
-      <h2> Home Page</h2>
-      <Link
-        className="btn btn-block btn-squared btn-light text-dark"
-        to={`/users/${userId}`}
-      >
-        {" "}
-        <button>Go to your dashboard</button>
-      </Link>
+    <div className="container">
+      <div className="p-5 mb-4 bg-light rounded-3">
+        <div className="container-fluid py-5">
+          <h1 className="display-5 fw-bold">Travel Planner</h1>
+          <p className="col-md-8 fs-4">Never miss that recommendation again</p>
+          {userId ? (
+            <Link to={`/users/${userId}`}>
+              <button type="button" className="btn btn-outline-dark btn-lg">
+                {userId.toUpperCase()}'s Dashboard
+              </button>
+            </Link>
+          ) : (
+            <Link to={`/login`}>
+              <button type="button" className="btn btn-outline-dark btn-lg">
+                Get Started
+              </button>
+            </Link>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
