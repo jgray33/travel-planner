@@ -2,7 +2,7 @@ import React from "react";
 import DeleteFact from "./DeleteFact";
 import EditFact from "./EditFact";
 
-const FactCard = ({ tripId, facts }) => {
+const FactCard = ({ tripId,facts }) => {
   return (
     <div>
       {facts.map((fact) => (
