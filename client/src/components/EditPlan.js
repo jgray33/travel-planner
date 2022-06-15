@@ -6,7 +6,6 @@ import PlanForm from "./PlanForm"
 Modal.setAppElement("#root")
 
 const EditPlan = ( {planId, category, name, location, notes, status} ) => {
-    console.log(name)
     let subtitle;
     const [modalIsOpen, setIsOpen] = useState(false);
   

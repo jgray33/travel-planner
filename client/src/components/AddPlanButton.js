@@ -8,7 +8,6 @@ const AddPlanButton = ({ formState }) => {
   
 
   const handleFormSubmit = async (event) => {
-    //   event.preventDefault();
     try {
       const { data } = addPlan({
         variables: { ...formState },

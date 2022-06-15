@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import  Modal  from "react-modal";
 
-import AddFactForm from "./AddActForm";
+import FactForm from "./FactForm";
 
 const customStyles = {
     content: {
@@ -45,7 +45,7 @@ const AddFact = () => {
             contentLabel="Add Trip"
           >
             <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new fact</h2>
-            <AddFactForm />
+            <FactForm />
             <button onClick={closeModal}>close</button>
           </Modal>
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import EditPlan from "./EditPlan";
+import DeletePlan from "./DeletePlan";
 
-const PlanCard = ({ plans }) => {
-  // plans.map((plan) => console.log(plan.name));
+const PlanCard = ({ tripId, plans }) => {
 
   return (
     <div>
@@ -25,7 +25,9 @@ const PlanCard = ({ plans }) => {
             location={plan.location}
             notes={plan.notes}
             status={plan.status}
-            />{" "}
+            />
+            <DeletePlan planId={plan._id}
+            tripId={tripId}/>{" "}
           </div>
         </div>
       ))}
