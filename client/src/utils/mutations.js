@@ -52,3 +52,11 @@ mutation AddFact($tripId: ID, $description: String) {
     _id
   }
 }`
+
+export const UPDATE_FACT = gql`
+mutation Mutation($factId: ID, $description: String) {
+  updateFact(factId: $factId, description: $description) {
+    _id
+    description
+  }
+}`

@@ -1,4 +1,5 @@
 import React from "react";
+import EditFact from "./EditFact";
 
 const FactCard = ({ facts }) => {
   facts.map((fact) => console.log(fact));
@@ -10,6 +11,8 @@ const FactCard = ({ facts }) => {
           <div className="card-body">
             <p className="card-title">{fact.description}</p>
           </div>
+          <EditFact factId={fact._id}
+          description={fact.description}/>
         </div>
       ))}
     </div>

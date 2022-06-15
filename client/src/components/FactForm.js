@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import { ADD_FACT } from "../utils/mutations";
+import AddFactButton from "./AddFactButton";
+import EditFactButton from "./EditFactButton";
+
 
 export default function FactForm({description, factId}) {
   const { tripId } = useParams();
@@ -21,26 +22,23 @@ export default function FactForm({description, factId}) {
         });
       };
 
-      const [addFact, {error}] = useMutation(ADD_FACT)
-
-      const handleFormSubmit = async (event) => {
-        try {
-          const { data } = addFact({
-            variables: { tripId, ...formState },
-          });
-        } catch (err) {
-          console.log(err);
-          
-        }
-      };
+  // Conditionally render the button depending if editing or adding a new plan
+  let button
+  if(factId) {
+    button = <EditFactButton formState={formState} factId={factId} />; 
+  console.log("FactId from button", factId)}
+      else {
+        button = <AddFactButton formState={formState} tripId={tripId}/>
+        console.log("Add plan")
+      }
+     
 
   return (
     <div>
       <h1> Here is the form</h1>
       <form
         className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
+              >
         <div className="col-12">
           <textarea
             name="description"
@@ -51,16 +49,9 @@ export default function FactForm({description, factId}) {
           ></textarea>
         </div>
         <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="submit">
-            Add Fact
-          </button>
+          {button}
         </div>
-        {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
-            Something went wrong...
-          </div>
-        )}
-      </form>
+        </form>
     </div>
   );
 }
