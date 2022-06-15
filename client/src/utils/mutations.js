@@ -67,3 +67,10 @@ mutation RemovePlan($planId: ID!, $tripId: ID!) {
     _id
   }
 }`
+
+export const DELETE_FACT = gql`
+mutation RemoveFact($factId: ID!, $tripId: ID!) {
+  removeFact(factId: $factId, tripId: $tripId) {
+    tripName
+  }
+}`

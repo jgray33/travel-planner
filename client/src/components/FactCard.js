@@ -1,8 +1,8 @@
 import React from "react";
+import DeleteFact from "./DeleteFact";
 import EditFact from "./EditFact";
 
-const FactCard = ({ facts }) => {
-
+const FactCard = ({ tripId, facts }) => {
   return (
     <div>
       {facts.map((fact) => (
@@ -10,8 +10,9 @@ const FactCard = ({ facts }) => {
           <div className="card-body">
             <p className="card-title">{fact.description}</p>
           </div>
-          <EditFact factId={fact._id}
-          description={fact.description}/>
+          <EditFact factId={fact._id} description={fact.description} />
+          <DeleteFact factId={fact._id} 
+          tripId={tripId}/>
         </div>
       ))}
     </div>
