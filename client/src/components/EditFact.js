@@ -1,22 +1,10 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-
 import FactForm from "./FactForm";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
 
 Modal.setAppElement("#root");
 
-const AddFact = () => {
+const EditFact = ({ factId, description }) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -33,27 +21,21 @@ const AddFact = () => {
   }
 
   return (
-    <div className="d-grid">
-      <button
-        type="button"
-        className="btn btn-outline-secondary btn-lg"
-        onClick={openModal}
-      >
-        Add New
+    <div>
+      <button type="button" onClick={openModal}>
+        Edit
       </button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Add Trip"
+        contentLabel="Edit fact"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new fact</h2>
-        <FactForm />
+        <FactForm factId={factId} description={description} />
         <button onClick={closeModal}>close</button>
       </Modal>
     </div>
   );
 };
 
-export default AddFact;
+export default EditFact;

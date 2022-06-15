@@ -7,7 +7,6 @@ const AddPlanButton = ({ formState }) => {
   console.log(formState);
 
   const handleFormSubmit = async (event) => {
-    //   event.preventDefault();
     try {
       const { data } = addPlan({
         variables: { ...formState },
