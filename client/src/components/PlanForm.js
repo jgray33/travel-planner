@@ -24,80 +24,101 @@ export default function PlanForm({
   });
 
   // Conditionally render the button depending if editing or adding a new plan
-let button
-if(planId) {
-  button = <EditPlanButton formState={formState} planId={planId} />; 
-console.log(planId)}
-    else {
-      button = <AddPlanButton formState={formState}/>
-      console.log("Add plan")
+  let button;
+  if (planId) {
+    button = <EditPlanButton formState={formState} planId={planId} />;
+    console.log(planId);
+  } else {
+    button = <AddPlanButton formState={formState} />;
+    console.log("Add plan");
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const resetValidation = (e) => {
+    e.target.classList.remove("is-invalid");
+    e.target.classList.remove("is-valid");
+  };
+
+  const validation = (e) => {
+    if (e.target.value === "") {
+      e.target.classList.add("is-invalid");
+    } else {
+      e.target.classList.add("is-valid");
     }
-
-
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormState((prevState) => {
-        return {
-          ...prevState,
-          [name]: value,
-        };
-      });
-    };
-  
-  
+  };
 
   return (
     <div>
-      <h1> Here is the form</h1>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        
-      >
-        <div className="col-12">
-          <textarea
-            name="category"
-            placeholder="Eat, Visit or Activity?"
-            value={formState.category}
-            className="form-input w-100"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="col-12">
-          <textarea
+      <h3>New plan for somewhere to {formState.category}</h3>
+      <form className="flex-row justify-center justify-space-between-md align-center">
+        <div className="form-group pb-2">
+          <label htmlFor="name">Plan Title</label>
+          <input
+            type="text"
+            className="form-control"
             name="name"
             placeholder="What's the plan?"
-            value={formState.name}
-            className="form-input w-100"
             onChange={handleChange}
-          ></textarea>
+            onFocus={resetValidation}
+            onBlur={validation}
+          />
+          <div className="valid-feedback">Sounds Fun!</div>
+          <div className="invalid-feedback">
+            Hey! Get back here.. This field is required.
+          </div>
         </div>
-        <div className="col-12">
-          <textarea
+
+        <div className="form-group pb-2">
+          <label htmlFor="name">Location</label>
+          <input
+            type="text"
+            className="form-control"
             name="location"
             placeholder="Location"
             value={formState.location}
-            className="form-input w-100"
             onChange={handleChange}
-          ></textarea>
+            onFocus={resetValidation}
+            onBlur={validation}
+          />
+          <div className="valid-feedback">Oh how lovely!</div>
+          <div className="invalid-feedback">
+            Hey! Get back here.. This field is required.
+          </div>
         </div>
-        <div className="col-12">
+
+        <div className="form-group pb-2">
+          <label htmlFor="name">Notes</label>
           <textarea
+            className="form-control"
             name="notes"
             placeholder="Notes"
             value={formState.notes}
-            className="form-input w-100"
             onChange={handleChange}
+            onFocus={resetValidation}
+            onBlur={validation}
           ></textarea>
+          <div className="valid-feedback">Excellent</div>
+          <div className="invalid-feedback">
+            Hey! Get back here.. This field is required.
+          </div>
         </div>
-        <div className="col-12 col-lg-3">
-          {button}
-        </div>
+
+        {button}
         {/* {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
         )} */}
       </form>
-      </div>
+    </div>
   );
 }

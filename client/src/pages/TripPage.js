@@ -1,11 +1,11 @@
-import React from 'react'
-import AddVisit from '../components/AddVisit'
+import React from "react";
+import AddVisit from "../components/AddVisit";
 import PlanCard from "../components/PlanCard";
 import FactCard from "../components/FactCard";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_TRIP } from "../utils/queries";
-import AddFact from '../components/AddFact';
+import AddFact from "../components/AddFact";
 
 const Trip = () => {
   const { tripId } = useParams();
@@ -35,21 +35,23 @@ const Trip = () => {
     <div className="container">
       <div className="row row-eq-height">
         <div className="col-md-3">
-          <h6>Eat</h6>
-          <PlanCard tripId={tripId}plans={eatPlans} />
+          <h3>Eat</h3>
+          <AddVisit category="eat" />
+          <PlanCard plans={eatPlans} />
         </div>
         <div className="col-md-3">
-          <h6>Visit</h6>
-          <AddVisit/>
-          <PlanCard tripId={tripId} plans={visitPlans} />
+          <h3>Visit</h3>
+          <AddVisit category="visit" />
+          <PlanCard plans={visitPlans} />
         </div>
         <div className="col-md-3">
-          <h6>Activity</h6>
-          <PlanCard tripId={tripId}plans={activityPlans} />
+          <h3>Activity</h3>
+          <AddVisit category="activity" />
+          <PlanCard plans={activityPlans} />
         </div>
         <div className="col-md-3">
-          <h6>Facts</h6>
-          <AddFact/>
+          <h3>Facts</h3>
+          <AddFact />
           <FactCard facts={facts} />
         </div>
       </div>

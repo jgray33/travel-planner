@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import PlanForm from "./PlanForm"
+import PlanForm from "./PlanForm";
 
 Modal.setAppElement("#root");
 
-const AddVisit = () => {
+const AddVisit = ({ category }) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -20,12 +20,16 @@ const AddVisit = () => {
     setIsOpen(false);
   }
 
+  console.log(category);
+
   return (
-    <div>
-      <h1> Visit</h1>
-      <button type="button" onClick={openModal}>
-        {" "}
-        Add place to visit{" "}
+    <div className="d-grid">
+      <button
+        type="button"
+        className="btn btn-outline-secondary btn-lg"
+        onClick={openModal}
+      >
+        Add New
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -33,8 +37,14 @@ const AddVisit = () => {
         onRequestClose={closeModal}
         contentLabel="Add visit"
       >
-        <PlanForm />
-        <button onClick={closeModal}>close</button>
+        <PlanForm category={category} />
+        <button
+          type="button"
+          className="btn btn-outline-danger my-2"
+          onClick={closeModal}
+        >
+          close
+        </button>
       </Modal>
     </div>
   );

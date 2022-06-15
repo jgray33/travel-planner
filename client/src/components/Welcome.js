@@ -11,12 +11,11 @@ const Welcome = () => {
   return (
     <div>
       {Auth.loggedIn() ? (
-        <h1>
-          Hello <br></br>
-          {Auth.getUser().data.username} you are logged in
-        </h1>
+        <h3 className="display-6">
+          {Auth.getUser().data.username.toUpperCase()} you are logged in
+        </h3>
       ) : (
-        <h1>Not logged in</h1>
+        <h3 className="display-6">Not logged in</h3>
       )}
     </div>
   );
