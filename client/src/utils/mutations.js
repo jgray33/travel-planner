@@ -52,3 +52,18 @@ mutation AddFact($tripId: ID, $description: String) {
     _id
   }
 }`
+
+export const UPDATE_FACT = gql`
+mutation Mutation($factId: ID, $description: String) {
+  updateFact(factId: $factId, description: $description) {
+    _id
+    description
+  }
+}`
+
+export const DELETE_PLAN = gql`
+mutation RemovePlan($planId: ID!, $tripId: ID!) {
+  removePlan(planId: $planId, tripId: $tripId) {
+    _id
+  }
+}`
