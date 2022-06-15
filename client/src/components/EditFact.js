@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import FactForm from "./FactForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
 Modal.setAppElement("#root");
 
@@ -22,9 +24,7 @@ const EditFact = ({ factId, description }) => {
 
   return (
     <div>
-      <button type="button" onClick={openModal}>
-        Edit
-      </button>
+      <FontAwesomeIcon icon={faPencil} type="button" onClick={openModal} />
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
