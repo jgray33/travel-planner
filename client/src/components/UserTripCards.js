@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import EditTrip from "./EditTrip";
-
+import DeleteTrip from "./DeleteTrip";
 const styles = {
   card: {
     width: "18rem",
@@ -9,7 +9,6 @@ const styles = {
 };
 
 const UserTripCards = ({ trips }) => {
-  trips.map((trip) => console.log(trip.tripName));
 
   return (
     <div className="row">
@@ -33,12 +32,16 @@ const UserTripCards = ({ trips }) => {
               </h6>
             </div>
           </div>
-          <EditTrip tripId={trip._id}
-          tripName={trip.tripName}
-          description={trip.description}
-          location={trip.location}
-          startDate={trip.startDate}
-          endDate={trip.endDate} />
+          <EditTrip
+            tripId={trip._id}
+            tripName={trip.tripName}
+            description={trip.description}
+            location={trip.location}
+            startDate={trip.startDate}
+            endDate={trip.endDate}
+          />
+
+          <DeleteTrip tripId={trip._id} />
         </div>
       ))}
     </div>

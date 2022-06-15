@@ -81,3 +81,11 @@ mutation Mutation($tripId: ID, $tripName: String, $description: String, $locatio
     tripName
   }
 }`
+
+export const DELETE_TRIP=gql`
+mutation RemoveTrip($tripId: ID!) {
+  removeTrip(tripId: $tripId) {
+    _id
+  }
+}
+`
