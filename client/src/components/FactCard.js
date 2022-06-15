@@ -2,7 +2,6 @@ import React from "react";
 import EditFact from "./EditFact";
 
 const FactCard = ({ facts }) => {
-  facts.map((fact) => console.log(fact));
 
   return (
     <div>

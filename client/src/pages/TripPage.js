@@ -36,16 +36,16 @@ const Trip = () => {
       <div className="row row-eq-height">
         <div className="col-md-3">
           <h6>Eat</h6>
-          <PlanCard plans={eatPlans} />
+          <PlanCard tripId={tripId}plans={eatPlans} />
         </div>
         <div className="col-md-3">
           <h6>Visit</h6>
           <AddVisit/>
-          <PlanCard plans={visitPlans} />
+          <PlanCard tripId={tripId} plans={visitPlans} />
         </div>
         <div className="col-md-3">
           <h6>Activity</h6>
-          <PlanCard plans={activityPlans} />
+          <PlanCard tripId={tripId}plans={activityPlans} />
         </div>
         <div className="col-md-3">
           <h6>Facts</h6>

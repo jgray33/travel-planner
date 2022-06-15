@@ -60,3 +60,10 @@ mutation Mutation($factId: ID, $description: String) {
     description
   }
 }`
+
+export const DELETE_PLAN = gql`
+mutation RemovePlan($planId: ID!, $tripId: ID!) {
+  removePlan(planId: $planId, tripId: $tripId) {
+    _id
+  }
+}`
