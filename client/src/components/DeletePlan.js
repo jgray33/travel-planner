@@ -16,6 +16,7 @@ const handleDelete = async (tripId, planId) => {
         const {data} = await deletePlan({
             variables: {tripId, planId}
         })
+        window.location.reload()
     } catch (err) {
         console.log(err)
     }
