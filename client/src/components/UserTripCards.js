@@ -11,20 +11,26 @@ const UserTripCards = ({ trips }) => {
   trips.map((trip) => console.log(trip.tripName));
 
   return (
-    <div>
-      <h1>Your trips</h1>
+    <div className="row">
       {trips.map((trip) => (
-        <div className="card" styles={styles.card}>
-          <div className="card-body">
-            <Link
-              className="btn btn-block btn-squared btn-light text-dark"
-              to={`/trips/${trip._id}`}
-            >
-              <h5 className="card-title">{trip.tripName}</h5>
-            </Link>
-            <h6 className="card-subtitle mb-2 text-muted">
-              {trip.description}
-            </h6>
+        <div className="col" key={trip.id}>
+          <div className="card" styles={styles.card}>
+            <div className="card-body">
+              <Link className="text-decoration-none" to={`/trips/${trip._id}`}>
+                <h5 className="card-title link-secondary stretched-link text-decoration-none">
+                  {trip.tripName}
+                </h5>
+              </Link>
+              <h6 className="card-subtitle mb-2 text-muted">
+                {trip.description}
+              </h6>
+              <h6 className="card-subtitle mb-2 text-muted">
+                Start: {trip.startDate}
+              </h6>
+              <h6 className="card-subtitle mb-2 text-muted">
+                End: {trip.endDate}
+              </h6>
+            </div>
           </div>
         </div>
       ))}

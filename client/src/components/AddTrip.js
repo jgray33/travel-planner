@@ -33,10 +33,10 @@ const AddTrip = () => {
   }
 
   return (
-    <div>
+    <span>
       <button
         type="button"
-        className="btn btn-outline-secondary"
+        className="btn btn-outline-dark btn-lg"
         onClick={openModal}
       >
         Add trip
@@ -54,7 +54,7 @@ const AddTrip = () => {
           close
         </button>
       </Modal>
-    </div>
+    </span>
   );
 };
 

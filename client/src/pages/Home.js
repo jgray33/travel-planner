@@ -15,7 +15,7 @@ const Home = () => {
           {userId ? (
             <Link to={`/users/${userId}`}>
               <button type="button" className="btn btn-outline-dark btn-lg">
-                {userId.toUpperCase()}'s Dashboard
+                {userId.toUpperCase()}'s Trips
               </button>
             </Link>
           ) : (
