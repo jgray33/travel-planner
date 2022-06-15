@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const styles = {
   card: {
-    width: "18rem",
+    width: "7rem",
   },
 };
 
@@ -14,7 +14,10 @@ const UserTripCards = ({ trips }) => {
     <div>
       <h1>Your trips</h1>
       {trips.map((trip) => (
-        <div className="card" styles={styles.card}>
+        <div
+          className="card m-4 border border-danger"
+          style={{ width: "18rem", height: "9rem" }}
+        >
           <div className="card-body">
             <Link
               className="btn btn-primary btn-block btn-squared btn-light text-dark"
@@ -22,7 +25,7 @@ const UserTripCards = ({ trips }) => {
             >
               <h5 className="card-title">{trip.tripName}</h5>
             </Link>
-            <h6 className="card-subtitle mb-2 text-muted">
+            <h6 className="card-subtitle mb-2 p-3 text-muted">
               {trip.description}
             </h6>
           </div>

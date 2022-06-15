@@ -45,63 +45,50 @@ const AddTripForm = () => {
       <h1>Here is the form</h1>
 
       <form
-        className="container-fluid flex-row justify-center justify-space-between-md align-center bg-light"
+        className="container-fluid d-flex flex-column justify-content-center justify-content-between-md align-center bg-light p-0"
         onSubmit={handleFormSubmit}
       >
-        <div className="col-12">
-          <textarea
-            name="tripName"
-            placeholder="Trip name"
-            value={formState.tripName}
-            className="form-input w-100"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="col-12 col-lg-9">
-          <input
-            name="description"
-            placeholder="What's the occasion?"
-            value={formState.description}
-            className="form-input w-100"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-12 col-lg-9">
-          <input
-            name="location"
-            placeholder="Where are you going?"
-            value={formState.location}
-            className="form-input w-100"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-12 col-lg-9">
-          <input
-            name="startDate"
-            placeholder="When are you going?"
-            value={formState.startDate}
-            className="form-input w-100"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-12 col-lg-9">
-          <input
-            name="endDate"
-            placeholder="Until what date?"
-            value={formState.endDate}
-            className="form-input w-100"
-            onChange={handleChange}
-          />
-        </div>
-        <br></br>
-        <div>
-          <button
-            className="btn btn-primary text-nowrap container-fluid "
-            type="submit"
-          >
-            Add trip
-          </button>
-        </div>
+        <textarea
+          name="tripName"
+          placeholder="Trip name"
+          value={formState.tripName}
+          className="form-input w-100"
+          onChange={handleChange}
+        ></textarea>
+        <input
+          name="description"
+          placeholder="What's the occasion?"
+          value={formState.description}
+          className="form-input w-100"
+          onChange={handleChange}
+        />
+        <input
+          name="location"
+          placeholder="Where are you going?"
+          value={formState.location}
+          className="form-input w-100"
+          onChange={handleChange}
+        />
+        <input
+          name="startDate"
+          placeholder="When are you going?"
+          value={formState.startDate}
+          className="form-input w-100"
+          onChange={handleChange}
+        />
+        <input
+          name="endDate"
+          placeholder="Until what date?"
+          value={formState.endDate}
+          className="form-input w-100"
+          onChange={handleChange}
+        />
+        <button
+          className="btn btn-primary my-3 text-nowrap container-fluid "
+          type="submit"
+        >
+          Add trip
+        </button>
         {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
             Something went wrong...

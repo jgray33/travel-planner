@@ -25,7 +25,7 @@ const UserDashboard = () => {
       <div className="row">
         <Welcome />
       </div>
-      <div className="row">
+      <div className="row d-flex flex-wrap justify-content-center align-items-start h-75 w-100">
         <UserTripCards trips={userTrips} />
       </div>
       <div className="row">
