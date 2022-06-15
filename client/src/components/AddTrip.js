@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import Auth from "../utils/auth";
 
 import AddTripForm from "./AddTripForm";
 
@@ -34,20 +35,28 @@ const AddTrip = () => {
 
   return (
     <div>
-      <button type="button" onClick={openModal}>
-        Add trip
-      </button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Add Trip"
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
-        <AddTripForm />
-        <button onClick={closeModal}>close</button>
-      </Modal>
+      {Auth.loggedIn() ? (
+        <>
+          <button type="button" onClick={openModal}>
+            Add trip
+          </button>
+          <Modal
+            isOpen={modalIsOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Add Trip"
+          >
+            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
+            <AddTripForm />
+            <button onClick={closeModal}>close</button>
+          </Modal>
+        </>
+      ) : (
+        <>
+          <h3>login to add your trips</h3>
+        </>
+      )}
     </div>
   );
 };
