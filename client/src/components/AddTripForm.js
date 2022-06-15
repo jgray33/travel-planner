@@ -40,10 +40,21 @@ const AddTripForm = () => {
     }
   };
 
+  const resetValidation = (e) => {
+    e.target.classList.remove("is-invalid");
+    e.target.classList.remove("is-valid");
+  };
+
+  const validation = (e) => {
+    if (e.target.value === "") {
+      e.target.classList.add("is-invalid");
+    } else {
+      e.target.classList.add("is-valid");
+    }
+  };
+
   return (
     <div>
-      <h1>Here is the form</h1>
-
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
