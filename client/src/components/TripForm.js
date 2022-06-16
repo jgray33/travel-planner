@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import Auth from "../utils/auth";
 import AddTripButton from "./AddTripButton";
 import EditTripButton from "./EditTripButton";
 
-import Auth from "../utils/auth";
 const userId = Auth.getUser()?.data?._id;
 
 const TripForm = ({
@@ -55,7 +55,7 @@ const TripForm = ({
   return (
     <div className="mx-3">
       <form className="m-3">
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="tripName" className="form-label">
             Trip Name
           </label>
@@ -69,7 +69,7 @@ const TripForm = ({
             type="text"
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="tripDesc" className="form-label">
             Description
           </label>
@@ -82,7 +82,7 @@ const TripForm = ({
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="location" className="form-label">
             Location
           </label>
@@ -96,7 +96,7 @@ const TripForm = ({
             onChange={handleChange}
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="startDate" className="form-label">
             Start Date
           </label>
@@ -104,7 +104,6 @@ const TripForm = ({
             id="startDate"
             type="date"
             name="startDate"
-            placeholder="When are you going?"
             value={formState.startDate}
             className="form-input w-100"
             onChange={handleChange}
@@ -118,7 +117,6 @@ const TripForm = ({
             id="endDate"
             type="date"
             name="endDate"
-            placeholder="Until what date?"
             value={formState.endDate}
             className="form-input w-100"
             onChange={handleChange}

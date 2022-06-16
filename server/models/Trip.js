@@ -21,12 +21,12 @@ const tripSchema = new Schema({
   startDate: {
     type: Date,
     default: Date.now,
-    get: (createdAt) => dayjs(createdAt).format("DD-MM-YY"),
+    get: (createdAt) => dayjs(createdAt).format("YYYY-MM-D"),
   },
   endDate: {
     type: Date,
     default: Date.now,
-    get: (createdAt) => dayjs(createdAt).format("DD-MM-YY"),
+    get: (createdAt) => dayjs(createdAt).format("YYYY-MM-D"),
   },
   plans: [
     {
