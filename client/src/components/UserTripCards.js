@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import EditTrip from "./EditTrip";
 import DeleteTrip from "./DeleteTrip";
+const dayjs = require("dayjs");
 
 const UserTripCards = ({ trips }) => {
   return (
@@ -20,10 +21,10 @@ const UserTripCards = ({ trips }) => {
                     {trip.description}
                   </h6>
                   <h6 className="card-subtitle mb-2 text-muted">
-                    Start: {trip.startDate}
+                    Start: {dayjs(trip.startDate).format("dddd, MMMM D, YYYY")}
                   </h6>
                   <h6 className="card-subtitle mb-2 text-muted">
-                    End: {trip.endDate}
+                    End: {dayjs(trip.endDate).format("dddd, MMMM D, YYYY")}
                   </h6>
                 </div>
               </Link>
