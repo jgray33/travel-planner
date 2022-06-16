@@ -28,13 +28,13 @@ const UserDashboard = () => {
     (trip) => dayjs(trip.startDate).diff(dayjs().format("YYYY-MM-DD")) >= 0
   );
 
-  userTrips.forEach((trip) => {
-    console.log(trip.tripName);
-    console.log("Difference between trip start date and today in ms");
-    console.log(dayjs(trip.startDate).diff(dayjs().format("YYYY-MM-DD")));
-    console.log("Difference between trip end date and today in ms");
-    console.log(dayjs(trip.endDate).diff(dayjs().format("YYYY-MM-DD")));
-  });
+  // userTrips.forEach((trip) => {
+  //   console.log(trip.tripName);
+  //   console.log("Difference between trip start date and today in ms");
+  //   console.log(dayjs(trip.startDate).diff(dayjs().format("YYYY-MM-DD")));
+  //   console.log("Difference between trip end date and today in ms");
+  //   console.log(dayjs(trip.endDate).diff(dayjs().format("YYYY-MM-DD")));
+  // });
 
   return (
     <div className="container">
