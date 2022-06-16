@@ -50,7 +50,9 @@ const AddFact = () => {
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new fact</h2>
         <FactForm />
-        <button onClick={closeModal}>close</button>
+        <button className="btn btn-outline-danger my-3" onClick={closeModal}>
+          close
+        </button>
       </Modal>
     </div>
   );
