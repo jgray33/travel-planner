@@ -74,3 +74,18 @@ mutation RemoveFact($factId: ID!, $tripId: ID!) {
     tripName
   }
 }`
+
+export const UPDATE_TRIP = gql`
+mutation Mutation($tripId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
+  updateTrip(tripId: $tripId, tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate) {
+    tripName
+  }
+}`
+
+export const DELETE_TRIP=gql`
+mutation RemoveTrip($tripId: ID!) {
+  removeTrip(tripId: $tripId) {
+    _id
+  }
+}
+`

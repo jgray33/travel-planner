@@ -1,21 +1,33 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { ADD_TRIP } from "../utils/mutations";
+import AddTripButton from "./AddTripButton";
+import EditTripButton from "./EditTripButton";
 
 import Auth from "../utils/auth";
 const userId = Auth.getUser()?.data?._id;
 
-const AddTripForm = () => {
+const TripForm = ({
+  tripId,
+  tripName,
+  description,
+  location,
+  startDate,
+  endDate,
+}) => {
   const [formState, setFormState] = useState({
-    tripName: "",
-    description: "",
-    location: "",
-    startDate: "",
-    endDate: "",
+    tripName: tripName ? tripName : "",
+    description: description ? description : "",
+    location: location ? location : "",
+    startDate: startDate ? startDate : "",
+    endDate: endDate ? endDate : "",
     userId: userId,
   });
-  console.log(userId);
-  const [addTrip, { error }] = useMutation(ADD_TRIP);
+
+  let button;
+  if (tripId) {
+    button = <EditTripButton formState={formState} tripId={tripId} />;
+  } else {
+    button = <AddTripButton formState={formState} />;
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,19 +37,6 @@ const AddTripForm = () => {
         [name]: value,
       };
     });
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const { data } = addTrip({
-        variables: { ...formState },
-      });
-      // window.location.reload();
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   const resetValidation = (e) => {
@@ -55,10 +54,7 @@ const AddTripForm = () => {
 
   return (
     <div>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
+      <form className="flex-row justify-center justify-space-between-md align-center">
         <div className="col-12">
           <textarea
             name="tripName"
@@ -105,19 +101,10 @@ const AddTripForm = () => {
           />
         </div>
 
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="submit">
-            Add trip
-          </button>
-        </div>
-        {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
-            Something went wrong...
-          </div>
-        )}
+        <div className="col-12 col-lg-3">{button}</div>
       </form>
     </div>
   );
 };
 
-export default AddTripForm;
+export default TripForm;

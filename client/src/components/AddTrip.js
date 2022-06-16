@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-import AddTripForm from "./AddTripForm";
+import TripForm from "./TripForm";
 
 const customStyles = {
   content: {
@@ -49,7 +49,7 @@ const AddTrip = () => {
         contentLabel="Add Trip"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
-        <AddTripForm />
+        <TripForm />
         <button className="btn btn-outline-secondary" onClick={closeModal}>
           close
         </button>

@@ -27,7 +27,7 @@ const PlanCard = ({ tripId, plans }) => {
             status={plan.status}
             />
             <DeletePlan planId={plan._id}
-            tripId={tripId}/>{" "}
+            tripId={tripId}/>
           </div>
         </div>
       ))}

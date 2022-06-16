@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import EditTrip from "./EditTrip";
+import DeleteTrip from "./DeleteTrip";
 const styles = {
   card: {
     width: "18rem",
@@ -8,12 +9,11 @@ const styles = {
 };
 
 const UserTripCards = ({ trips }) => {
-  trips.map((trip) => console.log(trip.tripName));
 
   return (
     <div className="row">
       {trips.map((trip) => (
-        <div className="col" key={trip.id}>
+        <div className="col" key={trip._id}>
           <div className="card" styles={styles.card}>
             <div className="card-body">
               <Link className="text-decoration-none" to={`/trips/${trip._id}`}>
@@ -32,6 +32,16 @@ const UserTripCards = ({ trips }) => {
               </h6>
             </div>
           </div>
+          <EditTrip
+            tripId={trip._id}
+            tripName={trip.tripName}
+            description={trip.description}
+            location={trip.location}
+            startDate={trip.startDate}
+            endDate={trip.endDate}
+          />
+
+          <DeleteTrip tripId={trip._id} />
         </div>
       ))}
     </div>

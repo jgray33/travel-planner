@@ -4,9 +4,6 @@ import PlanForm from "./PlanForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
-
-
-
 Modal.setAppElement("#root");
 
 const EditPlan = ({ planId, category, name, location, notes, status }) => {
@@ -27,12 +24,13 @@ const EditPlan = ({ planId, category, name, location, notes, status }) => {
   }
   return (
     <div>
-      <FontAwesomeIcon icon={faPencil}
+      <FontAwesomeIcon
+        icon={faPencil}
         type="button"
         className="btn btn-outline-secondary"
         onClick={openModal}
       />
-        
+
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}

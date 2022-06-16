@@ -52,7 +52,7 @@ const Trip = () => {
         <div className="col-md-3">
           <h3>Facts</h3>
           <AddFact />
-          <FactCard facts={facts} tripId={tripId}/>
+          <FactCard facts={facts} tripId={tripId} />
         </div>
       </div>
     </div>
