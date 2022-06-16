@@ -30,35 +30,35 @@ const EditTrip = ({
     setIsOpen(false);
   }
 
-  return(
-    <div>
-    <FontAwesomeIcon
-      icon={faPencil}
-      type="button"
-      className="btn btn-outline-secondary"
-      onClick={openModal}
-    />
-
-    <Modal
-      isOpen={modalIsOpen}
-      onAfterOpen={afterOpenModal}
-      onRequestClose={closeModal}
-      contentLabel="Edit trip"
-    >
-      <TripForm
-        tripId={tripId}
-       tripName={tripName}
-       description={description}
-       location={location}
-       startDate={startDate}
-       endDate={endDate}
+  return (
+    <span className="mx-2">
+      <FontAwesomeIcon
+        icon={faPencil}
+        type="button"
+        className="btn btn-outline-dark"
+        onClick={openModal}
       />
-      <button className="btn btn-outline-secondary" onClick={closeModal}>
-        close
-      </button>
-    </Modal>
-  </div>
-  )
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        contentLabel="Edit trip"
+      >
+        <TripForm
+          tripId={tripId}
+          tripName={tripName}
+          description={description}
+          location={location}
+          startDate={startDate}
+          endDate={endDate}
+        />
+        <button className="btn btn-outline-secondary" onClick={closeModal}>
+          close
+        </button>
+      </Modal>
+    </span>
+  );
 };
 
-export default EditTrip
+export default EditTrip;

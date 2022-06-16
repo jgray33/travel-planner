@@ -40,7 +40,7 @@ const UserDashboard = () => {
         <div className="col">
           <h3 className="display-6">My trips</h3>
         </div>
-        <div className="col d-flex justify-content-md-end">
+        <div className="col d-flex justify-content-end">
           <AddTrip />
         </div>
       </div>
@@ -54,16 +54,6 @@ const UserDashboard = () => {
           <UserTripCards trips={futureTrips} />
         </div>
       </div>
-
-      {/* <div className="row">
-        <Welcome />
-      </div> */}
-      {/* <div className="row">
-        <UserTripCards trips={userTrips} />
-      </div>
-      <div className="row mt-3">
-        <AddTrip />
-      </div> */}
     </div>
   );
 };

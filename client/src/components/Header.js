@@ -9,41 +9,6 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    // <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-    //   <div className="container flex-row justify-space-between-lg justify-center align-center">
-    //     <div className="col-md-6">
-    //       <Link className="text-light" to="/">
-    //         <h1 className="m-0">Travel Planner</h1>
-    //       </Link>
-    //       <p className="m-0">Never miss a recomendation again</p>
-    //     </div>
-    // <div className="">
-    //   {Auth.loggedIn() ? (
-    //     <>
-    //       <Link
-    //         className="btn btn-lg btn-info m-2"
-    //         to={`/users/${Auth.getUser().data.username}`}
-    //       >
-    //         {Auth.getUser().data.username.toUpperCase()}'s trips
-    //       </Link>
-    //       <button className="btn btn-lg btn-light m-2" onClick={logout}>
-    //         Logout
-    //       </button>
-    //     </>
-    //   ) : (
-    //     <>
-    //       <Link className="btn btn-lg btn-info m-2" to="/login">
-    //         Login
-    //       </Link>
-    //       <Link className="btn btn-lg btn-light m-2" to="/signup">
-    //         Signup
-    //       </Link>
-    //     </>
-    //   )}
-    // </div>
-    //   </div>
-    // </header>
-    //
     <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <a
         href="/"
