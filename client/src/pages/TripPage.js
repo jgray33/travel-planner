@@ -37,22 +37,22 @@ const Trip = () => {
         <div className="col-md-3">
           <h3>Eat</h3>
           <AddVisit category="eat" />
-          <PlanCard plans={eatPlans} />
+          <PlanCard plans={eatPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
           <h3>Visit</h3>
           <AddVisit category="visit" />
-          <PlanCard plans={visitPlans} />
+          <PlanCard plans={visitPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
           <h3>Activity</h3>
           <AddVisit category="activity" />
-          <PlanCard plans={activityPlans} />
+          <PlanCard plans={activityPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
           <h3>Facts</h3>
           <AddFact />
-          <FactCard facts={facts} />
+          <FactCard facts={facts} tripId={tripId} />
         </div>
       </div>
     </div>
