@@ -5,25 +5,25 @@ const Footer = () => {
   return (
     <footer className="mb-2 mt-auto">
       <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-        <li className="nav-item">
-          <a href="/" className="nav-link px-2 text-muted">
+        <li>
+          <Link className="nav-link px-2 link-secondary" to={`/`}>
             Home
-          </a>
+          </Link>
         </li>
-        <li className="nav-item">
-          <a href="/about" className="nav-link px-2 text-muted">
+        <li>
+          <Link className="nav-link px-2 link-secondary" to={`/about`}>
             About
-          </a>
+          </Link>
         </li>
-        <li className="nav-item">
-          <a href="/contact" className="nav-link px-2 text-muted">
+        <li>
+          <Link className="nav-link px-2 link-secondary" to={`/contact`}>
             Contact
-          </a>
+          </Link>
         </li>
-        <li className="nav-item">
-          <a href="/donate" className="nav-link px-2 text-muted">
+        <li>
+          <Link className="nav-link px-2 link-secondary" to={`/donate`}>
             Donate
-          </a>
+          </Link>
         </li>
       </ul>
       <p className="text-center text-muted">&copy; 2022 Travel Planner</p>
