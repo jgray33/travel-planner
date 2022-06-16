@@ -1,6 +1,5 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import Welcome from "../components/Welcome";
 import AddTrip from "../components/AddTrip";
 import UserTripCards from "../components/UserTripCards";
 import { useParams } from "react-router-dom";
@@ -14,25 +13,28 @@ const UserDashboard = () => {
     variables: { username: username },
   });
   const userProfile = data?.user || {};
-  console.log(userProfile.trips);
   const userTrips = userProfile.trips;
-
-  console.log("~~~~~~~~~");
-  console.log(dayjs("2022-11-06T00:00:00.000+00:00"));
-  console.log(userTrips);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  const now = dayjs();
-  console.log(`Now: ${now}`);
+  // Checks if the endDate was before today
+  const previousTrips = userTrips.filter(
+    (trip) => dayjs(trip.endDate).diff(dayjs().format("YYYY-MM-DD")) < 0
+  );
 
-  // const previousTrips = userTrips.filter((trip) => dayjs(trip.endDate) < now);
-  // const futureTrips = userTrips.filter((trip) => dayjs(trip.startDate) >= now);
+  const futureTrips = userTrips.filter(
+    (trip) => dayjs(trip.startDate).diff(dayjs().format("YYYY-MM-DD")) >= 0
+  );
 
-  const previousTrips = userTrips;
-  const futureTrips = userTrips;
+  // userTrips.forEach((trip) => {
+  //   console.log(trip.tripName);
+  //   console.log("Difference between trip start date and today in ms");
+  //   console.log(dayjs(trip.startDate).diff(dayjs().format("YYYY-MM-DD")));
+  //   console.log("Difference between trip end date and today in ms");
+  //   console.log(dayjs(trip.endDate).diff(dayjs().format("YYYY-MM-DD")));
+  // });
 
   return (
     <div className="container">
@@ -40,30 +42,20 @@ const UserDashboard = () => {
         <div className="col">
           <h3 className="display-6">My trips</h3>
         </div>
-        <div className="col d-flex justify-content-md-end">
+        <div className="col d-flex justify-content-end">
           <AddTrip />
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 order-md-2">
+          <h4 className="fs-4">Current & Upcoming Trips</h4>
+          <UserTripCards trips={futureTrips} />
+        </div>
+        <div className="col-md-6 order-md-1">
           <h4 className="fs-4">Previous Trips</h4>
           <UserTripCards trips={previousTrips} />
         </div>
-        <div className="col-md-6">
-          <h4 className="fs-4">Upcoming Trips</h4>
-          <UserTripCards trips={futureTrips} />
-        </div>
       </div>
-
-      {/* <div className="row">
-        <Welcome />
-      </div> */}
-      {/* <div className="row">
-        <UserTripCards trips={userTrips} />
-      </div>
-      <div className="row mt-3">
-        <AddTrip />
-      </div> */}
     </div>
   );
 };
