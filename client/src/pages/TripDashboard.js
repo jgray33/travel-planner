@@ -47,13 +47,13 @@ const UserDashboard = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6">
-          <h4 className="fs-4">Previous Trips</h4>
-          <UserTripCards trips={previousTrips} />
-        </div>
-        <div className="col-md-6">
+        <div className="col-md-6 order-md-2">
           <h4 className="fs-4">Current & Upcoming Trips</h4>
           <UserTripCards trips={futureTrips} />
+        </div>
+        <div className="col-md-6 order-md-1">
+          <h4 className="fs-4">Previous Trips</h4>
+          <UserTripCards trips={previousTrips} />
         </div>
       </div>
     </div>
