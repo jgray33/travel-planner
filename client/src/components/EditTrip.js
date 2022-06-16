@@ -4,6 +4,17 @@ import TripForm from "./TripForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
 Modal.setAppElement("#root");
 
 const EditTrip = ({
@@ -44,7 +55,9 @@ const EditTrip = ({
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Edit trip"
+        style={customStyles}
       >
+        <h4 className="fs-4">Edit trip</h4>
         <TripForm
           tripId={tripId}
           tripName={tripName}
@@ -53,8 +66,8 @@ const EditTrip = ({
           startDate={startDate}
           endDate={endDate}
         />
-        <button className="btn btn-outline-secondary" onClick={closeModal}>
-          close
+        <button className="btn btn-outline-danger" onClick={closeModal}>
+          Cancel
         </button>
       </Modal>
     </span>

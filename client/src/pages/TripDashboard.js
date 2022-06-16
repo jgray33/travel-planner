@@ -1,6 +1,5 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import Welcome from "../components/Welcome";
 import AddTrip from "../components/AddTrip";
 import UserTripCards from "../components/UserTripCards";
 import { useParams } from "react-router-dom";

@@ -33,6 +33,11 @@ const Header = () => {
             Contact
           </a>
         </li>
+        <li>
+          <a href="/donate" className="nav-link px-2 link-secondary">
+            Donate
+          </a>
+        </li>
       </ul>
 
       <div className="col-md-3 text-end">

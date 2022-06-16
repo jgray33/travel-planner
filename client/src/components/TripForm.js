@@ -53,37 +53,56 @@ const TripForm = ({
   };
 
   return (
-    <div>
-      <form className="flex-row justify-center justify-space-between-md align-center">
-        <div className="col-12">
-          <textarea
+    <div className="mx-3">
+      <form className="m-3">
+        <div className="mb-3">
+          <label htmlFor="tripName" className="form-label">
+            Trip Name
+          </label>
+          <input
+            id="tripName"
             name="tripName"
             placeholder="Trip name"
             value={formState.tripName}
             className="form-input w-100"
             onChange={handleChange}
-          ></textarea>
+            type="text"
+          />
         </div>
-        <div className="col-12 col-lg-9">
-          <input
+        <div className="mb-3">
+          <label htmlFor="tripDesc" className="form-label">
+            Description
+          </label>
+          <textarea
+            id="tripDesc"
             name="description"
             placeholder="What's the occasion?"
             value={formState.description}
             className="form-input w-100"
             onChange={handleChange}
-          />
+          ></textarea>
         </div>
-        <div className="col-12 col-lg-9">
+        <div className="mb-3">
+          <label htmlFor="location" className="form-label">
+            Location
+          </label>
           <input
+            id="location"
             name="location"
+            type="text"
             placeholder="Where are you going?"
             value={formState.location}
             className="form-input w-100"
             onChange={handleChange}
           />
         </div>
-        <div className="col-12 col-lg-9">
+        <div className="mb-3">
+          <label htmlFor="startDate" className="form-label">
+            Start Date
+          </label>
           <input
+            id="startDate"
+            type="date"
             name="startDate"
             placeholder="When are you going?"
             value={formState.startDate}
@@ -91,8 +110,13 @@ const TripForm = ({
             onChange={handleChange}
           />
         </div>
-        <div className="col-12 col-lg-9">
+        <div className="mb-3">
+          <label htmlFor="endDate" className="form-label">
+            End Date
+          </label>
           <input
+            id="endDate"
+            type="date"
             name="endDate"
             placeholder="Until what date?"
             value={formState.endDate}
@@ -100,8 +124,7 @@ const TripForm = ({
             onChange={handleChange}
           />
         </div>
-
-        <div className="col-12 col-lg-3">{button}</div>
+        <div>{button}</div>
       </form>
     </div>
   );

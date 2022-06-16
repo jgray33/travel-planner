@@ -48,10 +48,10 @@ const AddTrip = () => {
         style={customStyles}
         contentLabel="Add Trip"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new trip</h2>
+        <h4 className="fs-4">Add a new trip</h4>
         <TripForm />
-        <button className="btn btn-outline-secondary" onClick={closeModal}>
-          close
+        <button className="btn btn-outline-danger" onClick={closeModal}>
+          Cancel
         </button>
       </Modal>
     </span>

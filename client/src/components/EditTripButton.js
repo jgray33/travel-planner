@@ -31,12 +31,14 @@ const EditTripButton = ({ formState, tripId }) => {
     }
   };
   return (
-    <button
-      className="btn btn-outline-secondary btn-block py-3"
-      onClick={handleFormSubmit}
-    >
-      Update
-    </button>
+    <div className="d-grid">
+      <button
+        className="btn btn-outline-dark btn-block py-3"
+        onClick={handleFormSubmit}
+      >
+        Update trip
+      </button>
+    </div>
   );
 };
 
