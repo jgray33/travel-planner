@@ -40,6 +40,28 @@ const Profiles = () => {
       </Link>
     </div>,
 
+    <div className='container mt-2'>
+      <h2 className='display-6'>Andrea</h2>
+      <Link to={'https://github.com/Invogue01'} className='nav-link px-2 link-dark underline-on-hover'>
+      Andrea's Github
+      </Link>
+    </div>,
+
+    <div className='container mt-2'>
+      <h2 className='display-6'>Sanyiah</h2>
+      <Link to={'https://github.com/san098765432'} className='nav-link px-2 link-dark underline-on-hover'>
+      Sanyiah's Github
+      </Link>
+    </div>,
+
+    <div className='container mt-2'>
+      <h2 className='display-6'>Corey</h2>
+      <Link to={'https://github.com/Corey96'} className='nav-link px-2 link-dark underline-on-hover'>
+      Corey's Github
+      </Link>
+    </div>,
+
+
    
 
 
