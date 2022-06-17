@@ -19,12 +19,14 @@ const EditFactButton = ({ formState, factId }) => {
   };
 
   return (
-    <button
-      className="btn btn-primary btn-block py-3"
-      onClick={handleFormSubmit}
-    >
-      Update
-    </button>
+    <div className="d-grid">
+      <button
+        className="btn btn-outline-secondary py-3"
+        onClick={handleFormSubmit}
+      >
+        Update
+      </button>
+    </div>
   );
 };
 

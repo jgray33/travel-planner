@@ -5,7 +5,6 @@ import EditFactButton from "./EditFactButton";
 
 export default function FactForm({ description, factId }) {
   const { tripId } = useParams();
-  console.log("Here is the trip ID from the add fact form ", tripId);
 
   const [formState, setFormState] = useState({
     tripId: tripId,
@@ -25,26 +24,37 @@ export default function FactForm({ description, factId }) {
   let button;
   if (factId) {
     button = <EditFactButton formState={formState} factId={factId} />;
-    console.log("FactId from button", factId);
   } else {
     button = <AddFactButton formState={formState} tripId={tripId} />;
-    console.log("Add plan");
   }
+
+  const resetValidation = (e) => {
+    e.target.classList.remove("is-invalid");
+    e.target.classList.remove("is-valid");
+  };
+
+  const validation = (e) => {
+    if (e.target.value === "") {
+      e.target.classList.add("is-invalid");
+    } else {
+      e.target.classList.add("is-valid");
+    }
+  };
 
   return (
     <div>
-      <h1> Here is the form</h1>
-      <form className="  bg-light">
-        <div className="col-12">
-          <textarea
-            name="description"
-            placeholder="Fact?"
-            value={formState.description}
-            className="form-input w-100"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="col-12 col-lg-3">{button}</div>
+      <form>
+        <textarea
+          name="description"
+          placeholder="Fact?"
+          value={formState.description}
+          className="form-control"
+          onChange={handleChange}
+          onFocus={resetValidation}
+          onBlur={validation}
+        ></textarea>
+        <div className="invalid-feedback">Tell me something interesting!</div>
+        <div className="mt-3">{button}</div>
       </form>
     </div>
   );

@@ -6,6 +6,17 @@ import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
 Modal.setAppElement("#root");
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
 const EditFact = ({ factId, description }) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -24,16 +35,23 @@ const EditFact = ({ factId, description }) => {
 
   return (
     <div className="card-footer">
-
-      <FontAwesomeIcon icon={faPencil} type="button" onClick={openModal} className="btn btn-outline-secondary"/>
+      <FontAwesomeIcon
+        icon={faPencil}
+        type="button"
+        onClick={openModal}
+        className="btn btn-outline-secondary"
+      />
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Edit fact"
+        style={customStyles}
       >
         <FactForm factId={factId} description={description} />
-        <button onClick={closeModal}>close</button>
+        <button className="btn btn-outline-danger my-3" onClick={closeModal}>
+          close
+        </button>
       </Modal>
     </div>
   );
