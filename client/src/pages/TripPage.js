@@ -6,6 +6,8 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_TRIP } from "../utils/queries";
 import AddFact from "../components/AddFact";
+import "../style/background.css";
+
 
 const Trip = () => {
   const { tripId } = useParams();
@@ -32,29 +34,31 @@ const Trip = () => {
   );
 
   return (
+    <div className="background">
     <div className="container mt-3">
       <div className="row row-eq-height">
         <div className="col-md-3">
-          <h3 >Eat</h3>
+          <h3 className="headings">Eat</h3>
           <AddVisit category="eat" />
           <PlanCard plans={eatPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
-          <h3>Visit</h3>
+          <h3 className="headings">Visit</h3>
           <AddVisit category="visit" />
           <PlanCard plans={visitPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
-          <h3>Activity</h3>
+          <h3 className="headings">Activity</h3>
           <AddVisit category="activity" />
           <PlanCard plans={activityPlans} tripId={tripId} />
         </div>
         <div className="col-md-3">
-          <h3>Facts</h3>
+          <h3 className="headings">Facts</h3>
           <AddFact />
           <FactCard facts={facts} tripId={tripId} />
         </div>
       </div>
+    </div>
     </div>
   );
 };
