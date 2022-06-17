@@ -7,28 +7,49 @@ We used used everything we learned over the past six months showcasing our codin
 
 ### Criteria 
 
--Use React for the front end.
+- Use React for the front end.
 
--Use GraphQL with a Node.js and Express.js server.
+- Use GraphQL with a Node.js and Express.js server.
 
--Use MongoDB and the Mongoose ODM for the database.
+- Use MongoDB and the Mongoose ODM for the database.
 
--Use queries and mutations for retrieving, adding, updating, and deleting data.
+- Use queries and mutations for retrieving, adding, updating, and deleting data.
 
--Be deployed using Heroku (with data).
+- Be deployed using Heroku (with data).
 
--Have a polished UI.
+- Have a polished UI.
 
--Be responsive.
+- Be responsive.
 
--Be interactive (i.e., accept and respond to user input).
+- Be interactive (i.e., accept and respond to user input).
 
--Include authentication (JWT).
+- Include authentication (JWT).
 
--Protect sensitive API key information on the server.
+- Protect sensitive API key information on the server.
 
--Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
 
--Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+- Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
+- Create application using CSS
 
+- Payment platform
+
+#### Bonus Criteria 
+
+- Uses a web manifest
+
+- Uses a service worker for offline functionality
+
+- Is installable
+
+##### Contributors
+
+- Andrea Mac
+- Corey Johns
+- Dylan Allison
+- Julia Gray
+- Oliver Drew
+- Zain Abidin
+
+###### Exe
