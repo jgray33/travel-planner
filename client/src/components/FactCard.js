@@ -10,9 +10,11 @@ const FactCard = ({ tripId,facts }) => {
           <div className="card-body">
             <p className="card-title">{fact.description}</p>
           </div>
+          <div>
           <EditFact factId={fact._id} description={fact.description} />
           <DeleteFact factId={fact._id} 
           tripId={tripId}/>
+          </div>
         </div>
       ))}
     </div>
