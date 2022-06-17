@@ -36,7 +36,7 @@ const AddFact = () => {
     <div className="d-grid">
       <button
         type="button"
-        className="btn btn-outline-secondary btn-lg"
+        className="grey-button btn-lg"
         onClick={openModal}
       >
         Add New

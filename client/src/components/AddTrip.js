@@ -36,7 +36,7 @@ const AddTrip = () => {
     <span>
       <button
         type="button"
-        className="btn btn-outline-dark btn-lg"
+        className="grey-button btn-lg"
         onClick={openModal}
       >
         Add trip

@@ -26,7 +26,7 @@ const AddVisit = ({ category }) => {
     <div className="d-grid">
       <button
         type="button"
-        className="btn btn-outline-secondary btn-lg"
+        className="btn-lg grey-button"
         onClick={openModal}
       >
         Add New

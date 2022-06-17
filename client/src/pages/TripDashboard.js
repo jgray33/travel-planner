@@ -4,6 +4,7 @@ import AddTrip from "../components/AddTrip";
 import UserTripCards from "../components/UserTripCards";
 import { useParams } from "react-router-dom";
 import { QUERY_USER } from "../utils/queries";
+import "../style/background.css";
 const dayjs = require("dayjs");
 
 const UserDashboard = () => {
@@ -37,23 +38,25 @@ const UserDashboard = () => {
   // });
 
   return (
-    <div className="container mt-3">
-      <div className="row mb-3 d-flex">
-        <div className="col">
-          <h3 className="display-6">My trips</h3>
+    <div className="background">
+      <div className="container mt-3">
+        <div className="row mb-3 d-flex">
+          <div className="col">
+            <h3 className="display-6 headings">My trips</h3>
+          </div>
+          <div className="col d-flex justify-content-end">
+            <AddTrip />
+          </div>
         </div>
-        <div className="col d-flex justify-content-end">
-          <AddTrip />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6 order-md-2">
-          <h4 className="fs-4">Current & Upcoming Trips</h4>
-          <UserTripCards trips={futureTrips} />
-        </div>
-        <div className="col-md-6 order-md-1">
-          <h4 className="fs-4">Previous Trips</h4>
-          <UserTripCards trips={previousTrips} />
+        <div className="row">
+          <div className="col-md-6 order-md-2">
+            <h4 className="fs-4 headings">Current & Upcoming Trips</h4>
+            <UserTripCards trips={futureTrips} />
+          </div>
+          <div className="col-md-6 order-md-1">
+            <h4 className="fs-4 headings">Previous Trips</h4>
+            <UserTripCards trips={previousTrips} />
+          </div>
         </div>
       </div>
     </div>
