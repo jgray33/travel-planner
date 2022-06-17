@@ -33,6 +33,13 @@ const Profiles = () => {
       </Link>
     </div>,
 
+    <div className='container mt-2'>
+      <h2 className='display-6'>Zain</h2>
+      <Link to={'https://github.com/zainuabidin'} className='nav-link px-2 link-dark underline-on-hover'>
+      Zain's Github
+      </Link>
+    </div>,
+
    
 
 
