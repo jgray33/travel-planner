@@ -4,13 +4,19 @@ import NavBar from "./NavBar";
 import Auth from "../utils/auth";
 import logo from "../assets/t-p-logo-sm.png";
 
+const styles= {
+  header: {
+    background: "white"
+  }
+}
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   return (
-    <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 border-bottom">
+    <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 border-bottom" style={styles.header}>
       <Link
         className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         to={`/`}
