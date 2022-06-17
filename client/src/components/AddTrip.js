@@ -5,12 +5,12 @@ import TripForm from "./TripForm";
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    // top: "50%",
+    // left: "50%",
+    // right: "auto",
+    // bottom: "auto",
+    // marginRight: "-50%",
+    // transform: "translate(-50%, -50%)",
   },
 };
 
@@ -48,11 +48,15 @@ const AddTrip = () => {
         style={customStyles}
         contentLabel="Add Trip"
       >
-        <h4 className="fs-4">Add a new trip</h4>
-        <TripForm />
-        <button className="btn btn-outline-danger" onClick={closeModal}>
-          Cancel
-        </button>
+        <div className="row justify-content-md-center">
+          <div className="col-md-8">
+            <h4 className="fs-4">Add a new trip</h4>
+            <TripForm />
+            <button className="btn btn-outline-danger" onClick={closeModal}>
+              Cancel
+            </button>
+          </div>
+        </div>
       </Modal>
     </span>
   );
