@@ -5,7 +5,15 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
+
 
 .headings {
   color: white;
@@ -22,10 +30,10 @@
   transform: translateY(-2px);
 }
 
-.card-headings{
-    color: black;
+.card-headings {
+  color: black;
 }
 
 .card-headings:hover {
-    transform: translateY(-2px);
-  }
+  transform: translateY(-2px);
+}

@@ -38,7 +38,6 @@ const UserDashboard = () => {
   // });
 
   return (
-    <div className="background">
       <div className="container mt-3">
         <div className="row mb-3 d-flex">
           <div className="col">
@@ -59,7 +58,7 @@ const UserDashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

@@ -34,7 +34,8 @@ const Trip = () => {
   );
 
   return (
-    <div className="background">
+    <div className="">
+      <div className="">
     <div className="container mt-3">
       <div className="row row-eq-height">
         <div className="col-md-3">
@@ -58,6 +59,7 @@ const Trip = () => {
           <FactCard facts={facts} tripId={tripId} />
         </div>
       </div>
+    </div>
     </div>
     </div>
   );
