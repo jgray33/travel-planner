@@ -37,7 +37,7 @@ const UserDashboard = () => {
   // });
 
   return (
-    <div className="container">
+    <div className="container mt-3">
       <div className="row mb-3 d-flex">
         <div className="col">
           <h3 className="display-6">My trips</h3>

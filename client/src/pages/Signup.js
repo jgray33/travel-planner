@@ -66,7 +66,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="form-signup-login form-signup w-100 m-auto">
+    <div className="form-signup-login form-signup w-100 m-auto mt-3">
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
