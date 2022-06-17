@@ -8,7 +8,7 @@ const AddFactButton = ({ tripId, formState }) => {
   const handleFormSubmit = async (event) => {
     try {
       const { data } = addFact({
-        variables: { tripId,...formState },
+        variables: { tripId, ...formState },
       });
     } catch (err) {
       console.log(err);
@@ -17,14 +17,14 @@ const AddFactButton = ({ tripId, formState }) => {
 
   return (
     <div>
-    <button
-      className="btn btn-primary btn-block py-3"
-      onClick={handleFormSubmit}
-    >
-      Add fact
-    </button>
-  </div>
-);
+      <button
+        className="btn btn-secondary text-nowrap flex-row "
+        onClick={handleFormSubmit}
+      >
+        Add fact
+      </button>
+    </div>
+  );
 };
 
-export default AddFactButton
+export default AddFactButton;

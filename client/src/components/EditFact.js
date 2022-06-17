@@ -23,8 +23,9 @@ const EditFact = ({ factId, description }) => {
   }
 
   return (
-    <div>
-      <FontAwesomeIcon icon={faPencil} type="button" onClick={openModal} />
+    <div className="card-footer">
+
+      <FontAwesomeIcon icon={faPencil} type="button" onClick={openModal} className="btn btn-outline-secondary"/>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
