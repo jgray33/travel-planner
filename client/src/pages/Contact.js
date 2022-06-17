@@ -14,7 +14,6 @@ const Contact = () => {
 };
 
 function Header() {
-  // Import result is the URL of your image
   return <img src={logo} alt="Logo" />;
 }
 
@@ -28,6 +27,7 @@ const Profiles = () => {
     </div>
   );
 };
+
 
 
 
