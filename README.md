@@ -54,7 +54,14 @@ We used used everything we learned over the past six months showcasing our codin
 
 ###### Execution 
 
-A fully functioning MERN application with a clean, efficient user interface successfully deployed with heroku using back end and front end technologies:
+Hello!
+
+Welcome to Travel Planner
+
+Travel Planner is an easy to use interactive platform to Plan, Organize and Create Your Next Adventure.
+
+
+Travel Planner is a fully functioning MERN application with a clean, efficient user interface successfully deployed with heroku using back end and front end technologies:
 
 - Front End 
 React.js
