@@ -52,7 +52,7 @@ We used used everything we learned over the past six months showcasing our codin
 - Oliver Drew
 - Zain Abidin
 
-###### Execution 
+###### Execution and Deployment 
 
 Hello!
 
@@ -82,3 +82,6 @@ Day.js
 Validator
 Byrcpt
 Json Web Token
+
+- Deployed Link:
+https://travel-planner-procedural.herokuapp.com/
