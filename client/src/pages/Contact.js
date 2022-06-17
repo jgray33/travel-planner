@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from './group.png';
+import logo from './group.png'; // group image which is in public folder
 
 const Contact = () => {
   return (
@@ -13,10 +13,12 @@ const Contact = () => {
   );
 };
 
+// group image to be displayed in middle
 function Header() {
   return <img src={logo} alt="group.png"/>;
 }
 
+// added profiles for githubs 
 const Profiles = () => {
   return (
     <div className='container mt-2'>
@@ -60,15 +62,6 @@ const Profiles = () => {
       Corey's Github
       </Link>
     </div>,
-
-
-   
-
-
-
-
-
-
   );
 };
 
