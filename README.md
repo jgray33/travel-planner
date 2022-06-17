@@ -50,6 +50,7 @@ We used used everything we learned over the past six months showcasing our codin
 - Dylan Allison
 - Julia Gray
 - Oliver Drew
+- Sanyiah
 - Zain Abidin
 
 ###### Execution and Deployment 
@@ -64,24 +65,24 @@ Travel Planner is an easy to use interactive platform to Plan, Organize and Crea
 Travel Planner is a fully functioning MERN application with a clean, efficient user interface successfully deployed with heroku using back end and front end technologies:
 
 - Front End 
-React.js
-JSX
-CSS
-Bootstap
-React Modal
-Day.js
+- React.js
+- JSX
+- CSS
+- Bootstap
+-React Modal
+- Day.js
 
 - Back End
-Node.js
-Express
-Apollo
-GraphQl
-MongoDB
-Mongoose
-Day.js
-Validator
-Byrcpt
-Json Web Token
+- Node.js
+- Express
+- Apollo
+- GraphQl
+- MongoDB
+- Mongoose
+- Day.js
+- Validator
+- Byrcpt
+- Json Web Token
 
 - Deployed Link:
 https://travel-planner-procedural.herokuapp.com/
