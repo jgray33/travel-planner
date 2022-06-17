@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Auth from "../utils/auth";
 import AddTripButton from "./AddTripButton";
 import EditTripButton from "./EditTripButton";
+import CityAutoComp from "./CityAutoComp";
 
 const userId = Auth.getUser()?.data?._id;
 
@@ -86,7 +87,7 @@ const TripForm = ({
           <label htmlFor="location" className="form-label">
             Location
           </label>
-          <input
+          {/* <input
             id="location"
             name="location"
             type="text"
@@ -94,7 +95,8 @@ const TripForm = ({
             value={formState.location}
             className="form-input w-100"
             onChange={handleChange}
-          />
+          /> */}
+          <CityAutoComp onChange={handleChange} value={formState.location} />
         </div>
         <div className="mb-2">
           <label htmlFor="startDate" className="form-label">
