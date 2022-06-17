@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import NavBar from "./NavBar";
 import Auth from "../utils/auth";
 
 const Header = () => {
@@ -16,30 +16,7 @@ const Header = () => {
       >
         <h1 className="bi m-3 fs-4">Travel Planner</h1>
       </Link>
-
-      <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li>
-          <Link className="nav-link px-2 link-secondary" to={`/`}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link px-2 link-secondary" to={`/about`}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link px-2 link-secondary" to={`/contact`}>
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link px-2 link-secondary" to={`/donate`}>
-            Donate
-          </Link>
-        </li>
-      </ul>
-
+      <NavBar />
       <div className="col-md-3 text-end">
         {Auth.loggedIn() ? (
           <>
