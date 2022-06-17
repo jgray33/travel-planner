@@ -35,7 +35,7 @@ const Trip = () => {
     <div className="container mt-3">
       <div className="row row-eq-height">
         <div className="col-md-3">
-          <h3>Eat</h3>
+          <h3 >Eat</h3>
           <AddVisit category="eat" />
           <PlanCard plans={eatPlans} tripId={tripId} />
         </div>

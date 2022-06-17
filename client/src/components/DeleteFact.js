@@ -20,10 +20,12 @@ const DeleteFact = ({ tripId, factId }) => {
   };
 
   return (
+    <span className="mx-2">
     <FontAwesomeIcon
       icon={faTrashCan}
       onClick={() => handleDelete(tripId, factId)}
     />
+    </span>
   );
 };
 

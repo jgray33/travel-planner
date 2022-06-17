@@ -27,7 +27,7 @@ const EditPlan = ({ planId, category, name, location, notes, status }) => {
       <FontAwesomeIcon
         icon={faPencil}
         type="button"
-        className="btn btn-outline-secondary"
+        className="btn"
         onClick={openModal}
       />
 
@@ -45,7 +45,7 @@ const EditPlan = ({ planId, category, name, location, notes, status }) => {
           notes={notes}
           status={status}
         />
-        <button className="btn btn-outline-secondary" onClick={closeModal}>
+        <button className="btn" onClick={closeModal}>
           close
         </button>
       </Modal>

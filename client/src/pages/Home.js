@@ -21,13 +21,13 @@ const Home = () => {
               </p>
               {userId ? (
                 <Link to={`/users/${userId}`}>
-                  <button type="button" className="btn btn-outline-dark btn-lg">
+                  <button type="button" className="button-27 btn-lg">
                     {userId.toUpperCase()}'s Trips
                   </button>
                 </Link>
               ) : (
                 <Link to={`/login`}>
-                  <button type="button" className="btn btn-outline-dark btn-lg">
+                  <button type="button" className="button-27 btn-lg">
                     Get Started
                   </button>
                 </Link>
