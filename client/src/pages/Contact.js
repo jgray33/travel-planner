@@ -22,7 +22,14 @@ const Profiles = () => {
     <div className='container mt-2'>
       <h2 className='display-6'>Julia</h2>
       <Link to={'https://github.com/jgray33'} className='nav-link px-2 link-dark underline-on-hover'>
-      Julia Github
+      Julia's Github
+      </Link>
+    </div>,
+
+    <div className='container mt-2'>
+      <h2 className='display-6'>Ollie</h2>
+      <Link to={'https://github.com/oli-drew'} className='nav-link px-2 link-dark underline-on-hover'>
+      Ollie's Github
       </Link>
     </div>,
 
