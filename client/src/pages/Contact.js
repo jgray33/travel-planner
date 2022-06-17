@@ -14,7 +14,7 @@ const Contact = () => {
 };
 
 function Header() {
-  return <img src={logo} alt="Logo" />;
+  return <img src={logo} alt="group.png"/>;
 }
 
 const Profiles = () => {
