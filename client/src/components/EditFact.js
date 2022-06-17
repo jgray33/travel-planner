@@ -34,7 +34,7 @@ const EditFact = ({ factId, description }) => {
   }
 
   return (
-    <div className="card-footer">
+    <div>
       <FontAwesomeIcon
         icon={faPencil}
         type="button"

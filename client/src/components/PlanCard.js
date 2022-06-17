@@ -3,7 +3,6 @@ import EditPlan from "./EditPlan";
 import DeletePlan from "./DeletePlan";
 
 const PlanCard = ({ tripId, plans }) => {
-
   return (
     <div>
       {plans.map((plan) => (
@@ -19,15 +18,21 @@ const PlanCard = ({ tripId, plans }) => {
             </ul>
           </div>
           <div className="card-footer">
-            <EditPlan planId={plan._id} 
-            category={plan.category}
-            name={plan.name} 
-            location={plan.location}
-            notes={plan.notes}
-            status={plan.status}
-            />
-            <DeletePlan planId={plan._id}
-            tripId={tripId}/>
+            <div className="row">
+              <div className="col">
+                <DeletePlan planId={plan._id} tripId={tripId} />
+              </div>
+              <div className="col text-end">
+                <EditPlan
+                  planId={plan._id}
+                  category={plan.category}
+                  name={plan.name}
+                  location={plan.location}
+                  notes={plan.notes}
+                  status={plan.status}
+                />
+              </div>
+            </div>
           </div>
         </div>
       ))}
