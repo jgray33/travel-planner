@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from './logo.png';
 
 const Contact = () => {
   return (
@@ -11,5 +12,14 @@ const Contact = () => {
     </div>
   );
 };
+
+
+
+function Header() {
+  // Import result is the URL of your image
+  return <img src={logo} alt="Logo" />;
+}
+
+export default Header;
 
 export default Contact;
