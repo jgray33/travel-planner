@@ -63,3 +63,15 @@ CSS
 Bootstap
 React Modal
 Day.js
+
+- Back End
+Node.js
+Express
+Apollo
+GraphQl
+MongoDB
+Mongoose
+Day.js
+Validator
+Byrcpt
+Json Web Token
