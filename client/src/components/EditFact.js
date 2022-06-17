@@ -34,12 +34,12 @@ const EditFact = ({ factId, description }) => {
   }
 
   return (
-    <div className="card-footer">
+    <div>
       <FontAwesomeIcon
         icon={faPencil}
         type="button"
         onClick={openModal}
-        className="btn btn-outline-secondary"
+        className="btn"
       />
       <Modal
         isOpen={modalIsOpen}
