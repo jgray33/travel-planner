@@ -13,9 +13,9 @@ const UserTripCards = ({ trips }) => {
             <div className="card">
               <Link className="text-decoration-none" to={`/trips/${trip._id}`}>
                 <div className="card-body">
-                  <h5 className="card-title link-secondary text-decoration-none">
+                  <h4 className="card-title link-secondary text-decoration-none">
                     {trip.tripName}
-                  </h5>
+                  </h4>
 
                   <h6 className="card-subtitle mb-2 text-muted">
                     {trip.description}

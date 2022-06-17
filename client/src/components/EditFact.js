@@ -39,7 +39,7 @@ const EditFact = ({ factId, description }) => {
         icon={faPencil}
         type="button"
         onClick={openModal}
-        className="btn btn-outline-secondary"
+        className="btn"
       />
       <Modal
         isOpen={modalIsOpen}

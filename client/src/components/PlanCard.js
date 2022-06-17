@@ -14,7 +14,7 @@ const PlanCard = ({ tripId, plans }) => {
             <h5 className="card-title">{plan.name}</h5>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">{plan.location}</li>
-              <li className="list-group-item">{plan.notes}</li>
+              <li className="list-group-item plan-list">{plan.notes}</li>
             </ul>
           </div>
           <div className="card-footer">
