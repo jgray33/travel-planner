@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
+import validator from "validator";
 
 import "../style/signup-login.css";
 
@@ -40,6 +40,31 @@ const Signup = () => {
     }
   };
 
+  const resetValidation = (e) => {
+    e.target.classList.remove("is-invalid");
+    e.target.classList.remove("is-valid");
+  };
+
+  const validation = (e) => {
+    if (e.target.type === "email") {
+      if (validator.isEmail(e.target.value)) {
+        e.target.classList.add("is-valid");
+      } else {
+        e.target.classList.add("is-invalid");
+      }
+    } else if (e.target.type === "password") {
+      if (e.target.value.length >= 5) {
+        e.target.classList.add("is-valid");
+      } else {
+        e.target.classList.add("is-invalid");
+      }
+    } else if (e.target.value === "") {
+      e.target.classList.add("is-invalid");
+    } else {
+      e.target.classList.add("is-valid");
+    }
+  };
+
   return (
     <div className="form-signup-login form-signup w-100 m-auto mt-3">
       {data ? (
@@ -58,7 +83,10 @@ const Signup = () => {
               name="username"
               value={formState.name}
               onChange={handleChange}
+              onFocus={resetValidation}
+              onBlur={validation}
             />
+            <div className="invalid-feedback m-2">Username cannot be blank</div>
             <label htmlFor="username">Username</label>
           </div>
 
@@ -70,7 +98,10 @@ const Signup = () => {
               name="email"
               value={formState.email}
               onChange={handleChange}
+              onFocus={resetValidation}
+              onBlur={validation}
             />
+            <div className="invalid-feedback m-2">Invalid email address</div>
             <label htmlFor="email">Email address</label>
           </div>
 
@@ -82,7 +113,12 @@ const Signup = () => {
               name="password"
               value={formState.password}
               onChange={handleChange}
+              onFocus={resetValidation}
+              onBlur={validation}
             />
+            <div className="invalid-feedback m-2">
+              Password must be at least 5 characters
+            </div>
             <label htmlFor="password">Password</label>
           </div>
           <button

@@ -90,9 +90,7 @@ export default function PlanForm({
             onBlur={validation}
           />
           <div className="valid-feedback">Oh how lovely!</div>
-          <div className="invalid-feedback">
-            Hey! Get back here.. This field is required.
-          </div>
+          <div className="invalid-feedback">Tell me more..</div>
         </div>
 
         <div className="form-group pb-2">
@@ -103,13 +101,8 @@ export default function PlanForm({
             placeholder="Notes"
             value={formState.notes}
             onChange={handleChange}
-            onFocus={resetValidation}
-            onBlur={validation}
           ></textarea>
           <div className="valid-feedback">Excellent</div>
-          <div className="invalid-feedback">
-            Hey! Get back here.. This field is required.
-          </div>
         </div>
 
         {button}

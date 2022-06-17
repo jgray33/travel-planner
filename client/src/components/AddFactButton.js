@@ -16,9 +16,9 @@ const AddFactButton = ({ tripId, formState }) => {
   };
 
   return (
-    <div>
+    <div className="d-grid">
       <button
-        className="btn btn-secondary text-nowrap flex-row "
+        className="btn btn-outline-secondary py-3"
         onClick={handleFormSubmit}
       >
         Add fact

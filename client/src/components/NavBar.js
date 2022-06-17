@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li>
-        <Link to="/" className="nav-link px-2 link-dark">
+        <Link to="/" className="nav-link px-2 link-dark underline-on-hover">
           Home
         </Link>
       </li>
@@ -15,7 +15,7 @@ const NavBar = () => {
           <li>
             <Link
               to={`/users/${Auth.getUser()?.data?.username}`}
-              className="nav-link px-2 link-dark"
+              className="nav-link px-2 link-dark underline-on-hover"
             >
               Trip Dashboard
             </Link>
@@ -24,24 +24,36 @@ const NavBar = () => {
       ) : (
         <>
           <li>
-            <Link to={"/signup"} className="nav-link px-2 link-dark">
+            <Link
+              to={"/signup"}
+              className="nav-link px-2 link-dark underline-on-hover"
+            >
               Signup
             </Link>
           </li>
           <li>
-            <Link to={"/login"} className="nav-link px-2 link-dark">
+            <Link
+              to={"/login"}
+              className="nav-link px-2 link-dark underline-on-hover"
+            >
               Login
             </Link>
           </li>
         </>
       )}
       <li>
-        <Link to={"/donate"} className="nav-link px-2 link-dark">
+        <Link
+          to={"/donate"}
+          className="nav-link px-2 link-dark underline-on-hover"
+        >
           Donate
         </Link>
       </li>
       <li>
-        <Link to={"/contact"} className="nav-link px-2 link-dark">
+        <Link
+          to={"/contact"}
+          className="nav-link px-2 link-dark underline-on-hover"
+        >
           Contact
         </Link>
       </li>

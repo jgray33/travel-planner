@@ -48,7 +48,7 @@ const AddFact = () => {
         style={customStyles}
         contentLabel="Add Trip"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Add a new fact</h2>
+        <h4>Add a new fact</h4>
         <FactForm />
         <button className="btn btn-outline-danger my-3" onClick={closeModal}>
           close

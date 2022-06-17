@@ -64,10 +64,15 @@ const TripForm = ({
             name="tripName"
             placeholder="Trip name"
             value={formState.tripName}
-            className="form-input w-100"
+            className="form-control"
             onChange={handleChange}
             type="text"
+            onFocus={resetValidation}
+            onBlur={validation}
           />
+          <div className="invalid-feedback">
+            Hey! Get back here.. This field is required.
+          </div>
         </div>
         <div className="mb-2">
           <label htmlFor="tripDesc" className="form-label">
@@ -78,9 +83,12 @@ const TripForm = ({
             name="description"
             placeholder="What's the occasion?"
             value={formState.description}
-            className="form-input w-100"
+            className="form-control"
             onChange={handleChange}
+            onFocus={resetValidation}
+            onBlur={validation}
           ></textarea>
+          <div className="invalid-feedback">Tell me more..</div>
         </div>
         <div className="mb-2">
           <label htmlFor="location" className="form-label">
@@ -92,9 +100,14 @@ const TripForm = ({
             type="text"
             placeholder="Where are you going?"
             value={formState.location}
-            className="form-input w-100"
+            className="form-control"
             onChange={handleChange}
+            onFocus={resetValidation}
+            onBlur={validation}
           />
+          <div className="invalid-feedback">
+            You've got to be going somewhere..
+          </div>
         </div>
         <div className="mb-2">
           <label htmlFor="startDate" className="form-label">
@@ -105,9 +118,12 @@ const TripForm = ({
             type="date"
             name="startDate"
             value={formState.startDate}
-            className="form-input w-100"
+            className="form-control"
             onChange={handleChange}
+            onFocus={resetValidation}
+            onBlur={validation}
           />
+          <div className="invalid-feedback">Start date required..</div>
         </div>
         <div className="mb-3">
           <label htmlFor="endDate" className="form-label">
@@ -118,9 +134,14 @@ const TripForm = ({
             type="date"
             name="endDate"
             value={formState.endDate}
-            className="form-input w-100"
+            className="form-control"
             onChange={handleChange}
+            onFocus={resetValidation}
+            onBlur={validation}
+            disabled={formState.startDate ? false : true}
+            min={formState.startDate}
           />
+          <div className="invalid-feedback">End date required</div>
         </div>
         <div>{button}</div>
       </form>
