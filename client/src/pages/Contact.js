@@ -24,10 +24,17 @@ const Profiles = () => {
       <Link to={'https://github.com/jgray33'} className='nav-link px-2 link-dark underline-on-hover'>
       Julia Github
       </Link>
-    </div>
+    </div>,
+
+   
+
+
+
+
+
+
   );
 };
-
 
 
 
