@@ -32,7 +32,7 @@ const Trip = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container mt-3">
       <div className="row row-eq-height">
         <div className="col-md-3">
           <h3>Eat</h3>
