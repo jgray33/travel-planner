@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Auth from "../utils/auth";
+import logo from "../assets/t-p-logo-sm.png";
 
 const Header = () => {
   const logout = (event) => {
@@ -9,12 +10,19 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+    <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 border-bottom">
       <Link
         className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         to={`/`}
       >
-        <h1 className="bi m-3 fs-4">Travel Planner</h1>
+        <img
+          className="ms-3 me-2"
+          src={logo}
+          alt="Logo showing the world and the letters t and p"
+          width="40"
+          height="40"
+        />
+        <h1 className="bi fs-4">Travel Planner</h1>
       </Link>
       <NavBar />
       <div className="col-md-3 text-end">
