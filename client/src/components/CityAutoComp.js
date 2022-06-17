@@ -2,10 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { fetchPlace } from '../utils/fetchPlace';
 
-const CityAutoComp = ({handleChange}) => {
-  const [city, setCity] = useState("");
+const CityAutoComp = ({handleChange, value}) => {
+  const [city, setCity] = useState(value);
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState("");
+
+// const twoOnChange = e => {
+//     this.handleCityChange(e)
+//     this.handleChange
+// }
 
   const handleCityChange = async (e) => {
     setCity(e.target.value);
@@ -32,7 +37,7 @@ const CityAutoComp = ({handleChange}) => {
           id="city"
           name="city"
           onChange={handleCityChange}
-          value={city}
+          value={this.state.value}
           required
           pattern={autocompleteCities.join("|")}
           autoComplete="off"

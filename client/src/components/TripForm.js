@@ -23,6 +23,9 @@ const TripForm = ({
     userId: userId,
   });
 
+  console.log(formState.location)
+  console.log(formState.description)
+
   let button;
   if (tripId) {
     button = <EditTripButton formState={formState} tripId={tripId} />;
