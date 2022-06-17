@@ -52,4 +52,14 @@ We used used everything we learned over the past six months showcasing our codin
 - Oliver Drew
 - Zain Abidin
 
-###### Exe
+###### Execution 
+
+A fully functioning MERN application with a clean, efficient user interface successfully deployed with heroku using back end and front end technologies:
+
+- Front End 
+React.js
+JSX
+CSS
+Bootstap
+React Modal
+Day.js
