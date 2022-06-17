@@ -8,7 +8,6 @@ import { QUERY_TRIP } from "../utils/queries";
 import AddFact from "../components/AddFact";
 import "../style/background.css";
 
-
 const Trip = () => {
   const { tripId } = useParams();
 
@@ -36,31 +35,31 @@ const Trip = () => {
   return (
     <div className="">
       <div className="">
-    <div className="container mt-3">
-      <div className="row row-eq-height">
-        <div className="col-md-3">
-          <h3 className="headings">Eat</h3>
-          <AddVisit category="eat" />
-          <PlanCard plans={eatPlans} tripId={tripId} />
-        </div>
-        <div className="col-md-3">
-          <h3 className="headings">Visit</h3>
-          <AddVisit category="visit" />
-          <PlanCard plans={visitPlans} tripId={tripId} />
-        </div>
-        <div className="col-md-3">
-          <h3 className="headings">Activity</h3>
-          <AddVisit category="activity" />
-          <PlanCard plans={activityPlans} tripId={tripId} />
-        </div>
-        <div className="col-md-3">
-          <h3 className="headings">Facts</h3>
-          <AddFact />
-          <FactCard facts={facts} tripId={tripId} />
+        <div className="container mt-3">
+          <div className="row row-eq-height">
+            <div className="col-md-3">
+              <h3 className="">Eat</h3>
+              <AddVisit category="eat" />
+              <PlanCard plans={eatPlans} tripId={tripId} />
+            </div>
+            <div className="col-md-3">
+              <h3 className="">Visit</h3>
+              <AddVisit category="visit" />
+              <PlanCard plans={visitPlans} tripId={tripId} />
+            </div>
+            <div className="col-md-3">
+              <h3 className="">Activity</h3>
+              <AddVisit category="activity" />
+              <PlanCard plans={activityPlans} tripId={tripId} />
+            </div>
+            <div className="col-md-3">
+              <h3 className="">Facts</h3>
+              <AddFact />
+              <FactCard facts={facts} tripId={tripId} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   );
 };
