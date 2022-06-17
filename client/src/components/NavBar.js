@@ -11,8 +11,8 @@ const NavBar = () => {
   return (
     <div>
       {/* ternary opretor used for conditinal rendering */}
-      
-      <header className="p-3 mb-3 border-bottom">
+
+      <header className="p-3 border-bottom">
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a
