@@ -17,6 +17,7 @@ import Trip from "./pages/TripPage";
 import Signup from "./pages/Signup";
 import UserDashboard from "./pages/TripDashboard";
 import Contact from "./pages/Contact";
+import Donate from "./pages/Donate";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -50,6 +51,7 @@ function App() {
             <Route path="/trips/:tripId" element={<Trip />} />
             <Route path="/users/:username" element={<UserDashboard />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/donate" element={<Donate />} />
           </Routes>
           <Footer />
         </Router>
