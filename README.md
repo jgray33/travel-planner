@@ -1,4 +1,4 @@
-# Travel-Planner
+# Travel Planner
 
 ## Project-Requirements 
 
