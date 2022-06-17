@@ -42,7 +42,7 @@ function App() {
     <div className="d-flex flex-column min-vh-100">
       <ApolloProvider client={client}>
         <Router>
-          <NavBar />
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
