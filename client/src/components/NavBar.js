@@ -41,14 +41,14 @@ const NavBar = () => {
           </li>
         </>
       )}
-      <li>
+      {/* <li>
         <Link
           to={"/donate"}
           className="nav-link px-2 link-dark underline-on-hover"
         >
           Donate
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link
           to={"/contact"}

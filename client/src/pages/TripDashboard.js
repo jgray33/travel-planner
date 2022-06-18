@@ -38,27 +38,26 @@ const UserDashboard = () => {
   // });
 
   return (
-      <div className="container mt-3">
-        <div className="row mb-3 d-flex">
-          <div className="col">
-            <h3 className="display-6 headings">My trips</h3>
-          </div>
-          <div className="col d-flex justify-content-end">
-            <AddTrip />
-          </div>
+    <div className="container mt-3">
+      <div className="row mb-3 d-flex">
+        <div className="col">
+          <h3 className="display-6">My trips</h3>
         </div>
-        <div className="row">
-          <div className="col-md-6 order-md-2">
-            <h4 className="fs-4 headings">Current & Upcoming Trips</h4>
-            <UserTripCards trips={futureTrips} />
-          </div>
-          <div className="col-md-6 order-md-1">
-            <h4 className="fs-4 headings">Previous Trips</h4>
-            <UserTripCards trips={previousTrips} />
-          </div>
+        <div className="col d-flex justify-content-end">
+          <AddTrip />
         </div>
       </div>
-
+      <div className="row">
+        <div className="col-md-6 order-md-2">
+          <h4 className="fs-4">Current & Upcoming Trips</h4>
+          <UserTripCards trips={futureTrips} />
+        </div>
+        <div className="col-md-6 order-md-1">
+          <h4 className="fs-4">Previous Trips</h4>
+          <UserTripCards trips={previousTrips} />
+        </div>
+      </div>
+    </div>
   );
 };
 
