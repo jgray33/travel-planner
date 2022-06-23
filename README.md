@@ -1,78 +1,64 @@
-# Travel-Planner
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Project-Requirements 
+# Travel Planner
 
-For our final challenge of becoming Full stack web developers we had the opportunity to create a fully functioning, scalable, user-focused MERN Application.
-We used used everything we learned over the past six months showcasing our coding abilities, collaboration skills and problem solving.
+A webisite that allows the user to collate all their travel plans and recommendations in one place.
 
-### Criteria 
+- Deployed Link:
+https://travel-planner-procedural.herokuapp.com/
 
-- Use React for the front end.
 
-- Use GraphQL with a Node.js and Express.js server.
+## Description
 
-- Use MongoDB and the Mongoose ODM for the database.
+When you're planning a big trip and start researching where to go and what to do, it soon becomes apparent that there are so many options. And what about when you're at a party and the host's friend's boss' wife recommends that you go to a really great place to eat in a tiny village that you desperately want to remember. This travel planner replaces endless post-it notes, scribbles on the back of receipts and scrwals on the back of your hand that are bound to go a-miss.
 
-- Use queries and mutations for retrieving, adding, updating, and deleting data.
+Create your own profile and build a trip where you can collate all your plans for places to go to eat, visit, activities to do and facts you want to remember. 
 
-- Be deployed using Heroku (with data).
+## Walk through
 
-- Have a polished UI.
+### **Start by creating a new account** 
 
-- Be responsive.
 
-- Be interactive (i.e., accept and respond to user input).
+![tp-login](https://user-images.githubusercontent.com/95051960/175242947-984d7c3f-9847-440c-8e3b-66c0adbf0649.gif)
 
-- Include authentication (JWT).
 
-- Protect sensitive API key information on the server.
 
-- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+### **Add a new trip**
 
-- Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+Don't worry if you make a mistake, you can edit these easily
 
-- Create application using CSS
 
-- Payment platform
+![tp-create-trip](https://user-images.githubusercontent.com/95051960/175243248-1c509a0a-ddfb-458a-af88-24dc1076a4a3.gif)
 
-#### Bonus Criteria 
+### **Add plans to your trip**
 
-- Uses a web manifest
+Create as many plans as you'd like! If you make a mistake, easily edit and update. 
 
-- Uses a service worker for offline functionality
+![tp-add-plan](https://user-images.githubusercontent.com/95051960/175244060-af75859f-4f9a-472c-8d3d-62a744550315.gif)
 
-- Is installable
+### **Add facts to your trip** 
 
-##### Contributors
 
-- Andrea Mac
-- Corey Johns
-- Dylan Allison
-- Julia Gray
-- Oliver Drew
-- Sanyiah
-- Zain Abidin
+![tp-add-fact](https://user-images.githubusercontent.com/95051960/175244298-e0ed29d7-9576-4e8b-b36f-10cb3d92bd2b.gif)
 
-###### Execution and Deployment 
 
-Hello!
+### **Travel planner will organise your trips to previous trips and upcoming**
 
-Welcome to Travel Planner
 
-Travel Planner is an easy to use interactive platform to Plan, Organize and Create Your Next Adventure.
+![tp-organise](https://user-images.githubusercontent.com/95051960/175244742-019c58e8-198a-4cba-849f-bbdd15f9796a.gif)
 
+
+## Execution 
 
 Travel Planner is a fully functioning MERN application with a clean, efficient user interface successfully deployed with heroku using back end and front end technologies:
 
-- Front End 
+
 - React.js
 - JSX
 - CSS
 - Bootstap
--React Modal
+- React Modal
 - Day.js
-
-- Back End
 - Node.js
 - Express
 - Apollo
@@ -84,5 +70,15 @@ Travel Planner is a fully functioning MERN application with a clean, efficient u
 - Byrcpt
 - Json Web Token
 
-- Deployed Link:
-https://travel-planner-procedural.herokuapp.com/
+
+##### Contributors
+
+- [Andrea Mac](https://github.com/Invogue01)
+- [Corey Johns](https://github.com/Corey96)
+- [Dylan Allison](https://github.com/DBAX7)
+- [Julia Gray](https://github.com/jgray33)
+- [Oliver Drew](https://github.com/oli-drew)
+- [Sanyiah](https://github.com/san098765432)
+- [Zain Abidin](https://github.com/zainuabidin)
+
+
